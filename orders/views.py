@@ -30,7 +30,7 @@ class CreateOrderView(LoginRequiredMixin, View):
                 .select_related('product')
                 .filter(id__in=variant_ids)
             }
-            order = Order.objects.create(user=cart.user, total_price=cart.get_total_price())
+            order = Order.objects.create(user=cart.user, total_price=cart.get_total_price(), seller=cart.seller)
             for item in cart_items:
                 variant = variants.get(item.variant_id)
 
