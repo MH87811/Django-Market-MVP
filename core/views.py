@@ -6,3 +6,7 @@ from django.views.generic import *
 class IndexView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'core/index.html')
+
+class DashboardView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'vendors/dashboard.html')

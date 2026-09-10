@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seller Dashboard</title>
+</head>
+<body>
+<script>
+    const wsScheme = window.location.protocol === 'https:'
+        ? 'wss'
+        : 'ws';
+
+    const socket = new WebSocket(
+        `${wsScheme}://${window.location.host}/ws/seller/`
+    );
+
+    socket.onopen = function () {
+        console.log('WebSocket connected');
+    };
+
+    socket.onmessage = function (event) {
+        const data = JSON.parse(event.data);
+
+        console.log('Received:', data);
+    };
+
+    socket.onclose = function () {
+        console.log('WebSocket disconnected');
+    };
+</script>
+</body>
+</html>
