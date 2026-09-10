@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product Detail</title>
+</head>
+<body>
+{{ product }}
+<p>{{ product.title }}</p>
+<p>{{ product.description }}</p>
+<p>{{ product.price }}</p>
+<p>{{ product.is_available }}</p>
+<p>{{ product.created_at }}</p>
+<p>{{ product.updated_at }}</p>
+<p>{{ product.user }}</p>
+<p>{{ product.status }}</p>
+<hr>
+{% for image in product.get_all_images %}
+    <hr style="width: 60%">
+    {% if image.is_main %}
+        main
+    {% endif %}
+    <img src="{{ image }}" alt="{{ image.alt_text }}">
+{% endfor %}
+<hr>
+{% for variant in product.variants.all %}
+    <hr style="width: 60%">
+	{{ variant }}
+    <form action="{% url 'shopcarts:add' variant.id %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="quantity" value="1">
+        <input type="hidden" name="quantity" value="1">
+        <input type="hidden" name="quantity" value="1">
+        <input type="submit" value="add to cart">
+    </form>
+{% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cart Detail</title>
+</head>
+<body>
+{% for cart in carts %}
+    <hr>
+    <h2>{{ cart }}</h2>
+    {% for item in cart.cart_items.all %}
+        <hr style="width: 60%">
+        <p>{{ item }}</p>
+        <form action="{% url 'shopcarts:update' item.id %}" method="post">
+            {% csrf_token %}
+            <input type="number" name="quantity">
+            <input type="submit" value="update">
+        </form>
+        <form action="{% url 'shopcarts:remove' item.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="remove">
+        </form>
+        {% empty %}
+        no items
+    {% endfor %}
+    <form action="{% url 'shopcarts:clear' cart.id %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="clear">
+    </form>
+    {% empty %}
+    <p>no cart</p>
+{% endfor %}
+</body>
+</html>
