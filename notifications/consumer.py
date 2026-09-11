@@ -10,6 +10,12 @@ class SellerConsumer(AsyncWebsocketConsumer):
             return
 
         self.group_name = f'seller_{user.id}'
+
+        await self.channel_layer.group_add(
+            self.group_name,
+            self.channel_name,
+        )
+
         await self.accept()
         await self.send(
             text_data=json.dumps({

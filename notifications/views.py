@@ -1,4 +1,3 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
 from django.http import JsonResponse
 from asgiref.sync import async_to_sync
