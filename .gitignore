@@ -1,3 +1,19 @@
-.idea
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django
+*.log
+
+# Environment
+.env
+.venv/
+venv/
+
+# Media uploads
+media/
+
+# Static collected files
+staticfiles/
 db.sqlite3
-bad_code.py

@@ -87,11 +87,17 @@ CHANNEL_LAYERS = {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
             "hosts": [
-                ("127.0.0.1", 6379),
+                {
+                    "host": "127.0.0.1",
+                    "port": 6379,
+                    "socket_timeout": None,
+                },
             ]
         }
     },
 }
+
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379/1'
 
 
 # Database
@@ -101,6 +107,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        # pgsql
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'DBNAME',
+        # 'USER': 'DBUSER',
+        # 'PASSWORD': 'USERPASSWORD',
+        # 'HOST': '127.0.0.1',
+        # 'PORT': '5432',
+
     }
 }
 

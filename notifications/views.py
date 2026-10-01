@@ -2,6 +2,8 @@ from django.views import View
 from django.http import JsonResponse
 from asgiref.sync import async_to_sync
 from channels.layers import get_channel_layer
+
+from notifications.tasks import send_notification
 from products.views import BaseVendorView
 
 
@@ -24,4 +26,18 @@ class TestNotificationView(BaseVendorView, View):
 
         return JsonResponse({
             'message': 'sent'
+        })
+
+class TestCeleryNotificationView(BaseVendorView, View):
+    def get(self, request, *args, **kwargs):
+        task = send_notification.delay(
+            request.user.id,
+            1,
+            'new_order',
+            'New order',
+            'a new order registered'
+        )
+        return JsonResponse({
+            'message': 'sent',
+            'task_id': task.id,
         })

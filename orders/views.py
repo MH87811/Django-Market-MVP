@@ -2,6 +2,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db import transaction
 from django.shortcuts import redirect, get_object_or_404
 from django.views import View
+
+from notifications.models import Notification
+from notifications.tasks import send_notification
 from .forms import *
 from .models import *
 from shopcarts.models import Cart
@@ -47,4 +50,12 @@ class CreateOrderView(LoginRequiredMixin, View):
                     unit_price=variant.get_final_price(),
                 )
             cart_items.delete()
+            notification = Notification.objects.create(
+                type=Notification.TypeChoices.NEW_ORDER,
+                title='New Order',
+                message=f'New Order',
+                order=order,
+                recipient=order.seller,
+            )
+            transaction.on_commit(lambda : send_notification.delay(notification.id))
             return redirect('payment')

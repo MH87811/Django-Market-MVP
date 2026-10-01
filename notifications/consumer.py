@@ -31,7 +31,7 @@ class SellerConsumer(AsyncWebsocketConsumer):
                 self.channel_name,
             )
 
-    async def order_notification(self, event):
+    async def notification_message(self, event):
         await self.send(
             text_data=json.dumps(event['data'])
         )
