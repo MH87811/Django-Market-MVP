@@ -11,6 +11,8 @@ class Order(models.Model):
     seller = models.ForeignKey(User, on_delete=models.PROTECT, related_name='sell_carts')
     total_price = models.PositiveIntegerField()
     tracking_code = models.CharField(max_length=24, unique=True, blank=True, null=True)
+    address = models.TextField()
+    zip_code = models.CharField(max_length=10, blank=True, null=True)
 
     class StatusChoices(models.TextChoices):
         PENDING = 'pending', 'Pending'

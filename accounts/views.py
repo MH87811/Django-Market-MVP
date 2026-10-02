@@ -37,7 +37,7 @@ class ProfileView(LoginRequiredMixin, DetailView):
     template_name = 'accounts/profile.html'
     model = Profile
 
-    def get_object(self):
+    def get_object(self, queryset=None):
         return get_object_or_404(Profile, user=self.request.user)
 
 class ProfileEditView(LoginRequiredMixin, UpdateView):
@@ -46,7 +46,7 @@ class ProfileEditView(LoginRequiredMixin, UpdateView):
     success_url = reverse_lazy('accounts:profile')
     form_class = ProfileForm
 
-    def get_object(self):
+    def get_object(self, queryset=None):
         return Profile.objects.get(user=self.request.user)
 
     def get_form_kwargs(self):
@@ -63,7 +63,7 @@ class UserDeleteView(LoginRequiredMixin, DeleteView):
     template_name = 'accounts/user_delete.html'
     success_url = reverse_lazy('accounts:register')
 
-    def get_object(self):
+    def get_object(self, queryset=None):
         return User.objects.get(id=self.request.user.id)
 
     def delete(self, request, *args, **kwargs):

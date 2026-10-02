@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'payment',
     'channels',
     'notifications',
+    'panels',
 ]
 
 MIDDLEWARE = [

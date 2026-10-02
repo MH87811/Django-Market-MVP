@@ -1,61 +1,65 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.db import transaction
 from django.shortcuts import redirect, get_object_or_404
-from django.views import View
-
+from django.urls import reverse_lazy, reverse
+from django.contrib import messages
+from django.views.generic import FormView, UpdateView
 from notifications.models import Notification
-from notifications.tasks import send_notification
+from utils.tasks import send_notification
+from utils.vendor_view import BaseVendorView
 from .forms import *
-from .models import *
 from shopcarts.models import Cart
-from products.models import ProductVariant
 
 # Create your views here.
 
-class CreateOrderView(LoginRequiredMixin, View):
-    def post(self, request, cart_id, *args, **kwargs):
-        cart = get_object_or_404(Cart, id=cart_id, user=request.user)
-        cart_items = list(cart.cart_items.select_related('variant', 'variant__product'))
+class CreateOrderView(LoginRequiredMixin, FormView):
+    form_class = OrderCreationForm
+    success_url = reverse_lazy('payment:payment')
 
-        if not cart_items:
-            raise ValueError('Cart is empty')
+    def get_form_kwargs(self, *args, **kwargs):
+        kwargs = super().get_form_kwargs()
+        cart_id = self.kwargs.get('cart_id')
+        cart = get_object_or_404(Cart, id=cart_id, user=self.request.user)
+        kwargs['cart'] = cart
+        return kwargs
 
-        variant_ids = [
-            item.variant_id
-            for item in cart_items
-        ]
+    def form_valid(self, form):
+        order = form.save()
+        self.order_id = order.id
+        messages.success(self.request, 'order created')
+        return super().form_valid(form=form)
 
+class ShipOrderView(BaseVendorView, UpdateView):
+    model = Order
+    form_class = ShipOrderForm
+
+    def get_success_url(self):
+        return reverse(
+            'orders:seller-detail',
+            kwargs={'order_id': self.object.id},
+        )
+
+    def get_object(self, queryset=None):
+        return get_object_or_404(
+            Order,
+            id=self.kwargs.get('order_id'),
+            seller=self.request.user,
+            status=Order.StatusChoices.PAID
+        )
+
+    def form_valid(self, form):
         with transaction.atomic():
-            variants = {
-                variant.id: variant
-                for variant in ProductVariant.objects
-                .select_for_update()
-                .select_related('product')
-                .filter(id__in=variant_ids)
-            }
-            order = Order.objects.create(user=cart.user, total_price=cart.get_total_price(), seller=cart.seller)
-            for item in cart_items:
-                variant = variants.get(item.variant_id)
+            self.object.tracking_code = form.cleaned_data['tracking_code']
+            self.object.change_status(Order.StatusChoices.SHIPPED)
 
-                if not variant.product.is_available:
-                    raise ValueError(f'{variant.product} not available')
-
-                if item.quantity > variant.stock:
-                    raise ValueError(f'{variant}: not enough stock')
-
-                OrderItem.objects.create(
-                    order=order,
-                    variant=item.variant,
-                    quantity=item.quantity,
-                    unit_price=variant.get_final_price(),
-                )
-            cart_items.delete()
             notification = Notification.objects.create(
-                type=Notification.TypeChoices.NEW_ORDER,
-                title='New Order',
-                message=f'New Order',
-                order=order,
-                recipient=order.seller,
+                type=Notification.TypeChoices.ORDER_SHIPPED,
+                title='Order Shipped',
+                message=f'Your order {self.object} has been shipped.',
+                order=self.object,
+                recipient=self.object.user,
             )
-            transaction.on_commit(lambda : send_notification.delay(notification.id))
-            return redirect('payment')
+
+            transaction.on_commit(
+                lambda: send_notification.delay(notification.id)
+            )
+        return redirect(self.get_success_url())

@@ -2,9 +2,8 @@ from django.views import View
 from django.http import JsonResponse
 from asgiref.sync import async_to_sync
 from channels.layers import get_channel_layer
-
-from notifications.tasks import send_notification
-from products.views import BaseVendorView
+from utils.tasks import send_notification
+from utils.vendor_view import BaseVendorView
 
 
 # Create your views here.

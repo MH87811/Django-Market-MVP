@@ -1,18 +1,19 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db import transaction
 from django.shortcuts import redirect, get_object_or_404
 
 from notifications.models import Notification
-from notifications.tasks import send_notification
+from utils.tasks import send_notification
 from products.models import ProductVariant
 from .models import *
 from orders.models import *
 from django.views import View
 from django.contrib import messages
-from .gateway import PaymentGateway
+from utils.gateway import PaymentGateway
 
 # Create your views here.
 
-class PaymentView(View):
+class PaymentView(LoginRequiredMixin, View):
     def post(self, request, order_id, *args, **kwargs):
         order = get_object_or_404(Order, pk=order_id, user=request.user)
 
@@ -43,7 +44,7 @@ class PaymentView(View):
 
         return redirect(gateway.get_payment_url(payment.authority))
 
-class VerifyPaymentView(View):
+class VerifyPaymentView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         authority = request.GET.get('authority')
         if not authority:
