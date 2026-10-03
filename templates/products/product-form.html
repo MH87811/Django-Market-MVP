@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ویرایش محصول | بازارچه</title>
+  <meta name="description" content="بازارچه، نمونهٔ اولیهٔ بازار آنلاین">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="">
+<a class="skip-link" href="#main">پرش به محتوای اصلی</a>
+<header class="navbar" id="site-header">
+  <div class="container navbar-inner">
+    <button type="button" class="btn-icon navbar-toggle" data-panel-toggle="mobile-menu" aria-controls="mobile-menu" aria-expanded="false" aria-label="باز کردن منو"><i data-lucide="menu"></i></button>
+    <a class="navbar-logo" href="../core/index.html" aria-label="بازارچه، صفحه اصلی"><img src="assets/icons/logo.svg" alt="" width="34" height="34"><span>بازارچه</span></a>
+
+    <div class="dropdown navbar-categories" data-dropdown>
+      <button type="button" class="btn btn-ghost" data-dropdown-toggle aria-expanded="false" aria-controls="categories-menu"><i data-lucide="layout-grid"></i> دسته‌بندی‌ها <i data-lucide="chevron-down" class="icon-sm"></i></button>
+      <div class="dropdown-menu dropdown-menu--start dropdown-menu--categories" id="categories-menu" data-dropdown-menu hidden><a class="dropdown-item" href="category.html"><i data-lucide="laptop"></i>دیجیتال</a><a class="dropdown-item" href="category.html"><i data-lucide="shirt"></i>پوشاک</a><a class="dropdown-item" href="category.html"><i data-lucide="cooking-pot"></i>خانه و آشپزخانه</a><a class="dropdown-item" href="category.html"><i data-lucide="book-open"></i>کتاب</a><a class="dropdown-item" href="category.html"><i data-lucide="dumbbell"></i>ورزش</a><a class="dropdown-item" href="category.html"><i data-lucide="cable"></i>لوازم جانبی</a><a class="dropdown-item" href="category.html"><i data-lucide="gamepad-2"></i>گیم</a><a class="dropdown-item" href="category.html"><i data-lucide="graduation-cap"></i>آموزش</a></div>
+    </div>
+
+    <form class="search-bar navbar-search" role="search" action="products.html" method="get">
+      <label class="sr-only" for="nav-search">جستجوی محصولات</label>
+      <span class="search-bar-icon"><i data-lucide="search"></i></span>
+      <input class="input" id="nav-search" type="search" name="q" placeholder="جستجوی محصولات، دسته‌بندی‌ها و فروشندگان…" autocomplete="off">
+    </form>
+
+    <div class="navbar-actions">
+      <a class="btn-icon" href="../cart/cart.html" aria-label="سبد خرید"><i data-lucide="shopping-cart"></i><span class="icon-badge" data-cart-count>۴</span></a>
+      <div class="dropdown" data-dropdown>
+        <button type="button" class="btn-icon" data-dropdown-toggle aria-expanded="false" aria-controls="notifications-menu" aria-label="اعلان‌ها"><i data-lucide="bell"></i><span class="icon-dot" data-notification-dot></span></button>
+        <div class="dropdown-menu dropdown-menu--start dropdown-menu--notifications" id="notifications-menu" data-dropdown-menu hidden>
+          <div class="dropdown-head"><h2>اعلان‌ها</h2><button type="button" class="link-button" data-mark-all-read>علامت‌گذاری همه به‌عنوان خوانده‌شده</button></div>
+          <div class="notification-list"><a class="notification-item notification-item--success is-unread" href="../panel/notifications.html">
+  <span class="notification-icon"><i data-lucide="package-check"></i></span>
+  <span class="notification-body"><strong>سفارش شما ارسال شد</strong><time>۲ ساعت پیش</time></span>
+</a><a class="notification-item notification-item--info is-unread" href="../panel/notifications.html">
+  <span class="notification-icon"><i data-lucide="shopping-bag"></i></span>
+  <span class="notification-body"><strong>سفارش جدید ثبت شد</strong><time>۵ ساعت پیش</time></span>
+</a><a class="notification-item notification-item--warning is-unread" href="../panel/notifications.html">
+  <span class="notification-icon"><i data-lucide="triangle-alert"></i></span>
+  <span class="notification-body"><strong>موجودی رو به اتمام است</strong><time>دیروز</time></span>
+</a></div>
+          <a class="dropdown-foot" href="../panel/notifications.html">مشاهده همه اعلان‌ها</a>
+        </div>
+      </div>
+      <div class="dropdown navbar-account-desktop" data-dropdown>
+        <button type="button" class="navbar-account" data-dropdown-toggle aria-expanded="false" aria-controls="account-menu"><span class="avatar" aria-hidden="true">ع</span><span class="navbar-account-label">حساب کاربری</span><i data-lucide="chevron-down" class="icon-sm"></i></button>
+        <div class="dropdown-menu dropdown-menu--start" id="account-menu" data-dropdown-menu hidden>
+          <a class="dropdown-item" href="../panel/dashboard.html"><i data-lucide="layout-dashboard"></i>داشبورد</a>
+          <a class="dropdown-item" href="../order/orders.html"><i data-lucide="receipt"></i>سفارش‌های من</a>
+          <a class="dropdown-item" href="../accounts/profile.html"><i data-lucide="user-round"></i>پروفایل</a>
+          <a class="dropdown-item" href="../panel/vendor-dashboard.html"><i data-lucide="store"></i>پنل فروشنده</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="../accounts/login.html"><i data-lucide="log-out"></i>خروج</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="mobile-menu panel" id="mobile-menu" aria-label="منوی اصلی">
+    <div class="panel-header"><a class="navbar-logo" href="../core/index.html"><img src="assets/icons/logo.svg" alt="" width="30" height="30"><span>بازارچه</span></a><button type="button" class="btn-icon btn-icon-sm" data-panel-close aria-label="بستن منو"><i data-lucide="x"></i></button></div>
+    <div class="mobile-menu-body mobile-menu-links">
+      <a href="../core/index.html"><i data-lucide="house"></i>صفحه اصلی</a>
+      <a href="products.html"><i data-lucide="package"></i>همه محصولات</a>
+      <p class="mobile-menu-title">دسته‌بندی‌ها</p>
+      <a href="category.html"><i data-lucide="laptop"></i>دیجیتال</a><a href="category.html"><i data-lucide="shirt"></i>پوشاک</a><a href="category.html"><i data-lucide="cooking-pot"></i>خانه و آشپزخانه</a><a href="category.html"><i data-lucide="book-open"></i>کتاب</a><a href="category.html"><i data-lucide="dumbbell"></i>ورزش</a><a href="category.html"><i data-lucide="cable"></i>لوازم جانبی</a>
+      <p class="mobile-menu-title">حساب کاربری</p>
+      <a href="../panel/dashboard.html"><i data-lucide="layout-dashboard"></i>داشبورد</a>
+      <a href="../order/orders.html"><i data-lucide="receipt"></i>سفارش‌ها</a>
+      <a href="../accounts/profile.html"><i data-lucide="user-round"></i>پروفایل</a>
+      <a href="../panel/vendor-dashboard.html"><i data-lucide="store"></i>پنل فروشنده</a>
+      <a href="../accounts/login.html"><i data-lucide="log-in"></i>ورود / ثبت‌نام</a>
+    </div>
+  </nav>
+</header>
+<main id="main" class="page"><div class="container">
+  <div class="dashboard">
+    <aside class="sidebar sidebar-panel panel" id="dashboard-sidebar" aria-label="منوی پنل">
+  <div class="panel-header"><strong>منوی پنل</strong><button type="button" class="btn-icon btn-icon-sm" data-panel-close aria-label="بستن منو"><i data-lucide="x"></i></button></div>
+  <div class="sidebar-inner">
+    <div class="sidebar-user"><span class="avatar avatar-md" aria-hidden="true">T</span><div><strong>فروشگاه TechStore</strong><span>حساب فروشنده</span></div></div>
+    <nav class="sidebar-nav" aria-label="حساب فروشنده"><a href="../panel/vendor-dashboard.html"><i data-lucide="layout-dashboard"></i>نمای کلی</a><a href="../panel/vendor-products.html"><i data-lucide="package"></i>محصولات</a><a href="product-form.html" aria-current="page"><i data-lucide="circle-plus"></i>افزودن محصول</a><a href="../panel/vendor-dashboard.html#orders"><i data-lucide="receipt"></i>سفارش‌ها</a><a href="../panel/vendor-dashboard.html#sales"><i data-lucide="trending-up"></i>فروش</a><a href="../panel/notifications.html"><i data-lucide="bell"></i>اعلان‌ها</a><a href="../accounts/profile.html"><i data-lucide="user-round"></i>پروفایل</a>
+      <p class="sidebar-nav-title">میان‌بر</p>
+      <a href="../panel/dashboard.html"><i data-lucide="shopping-bag"></i>رفتن به پنل خریدار</a>
+      <a href="../accounts/login.html"><i data-lucide="log-out"></i>خروج از حساب</a>
+    </nav>
+  </div>
+</aside>
+    <div>
+      <div class="dashboard-topbar"><strong>ویرایش محصول</strong><button type="button" class="btn btn-secondary btn-sm" data-panel-toggle="dashboard-sidebar" aria-controls="dashboard-sidebar" aria-expanded="false"><i data-lucide="menu"></i> منوی پنل</button></div>
+      <nav class="breadcrumb" aria-label="مسیر صفحه"><ol><li><a href="../panel/vendor-products.html">محصولات من</a></li><li><span aria-current="page">ویرایش محصول</span></li></ol></nav>
+<div class="page-header"><div><h1>ویرایش محصول</h1><p>اطلاعات محصول و گزینه‌های آن را کامل کنید</p></div></div>
+<form action="../panel/vendor-products.html" method="get" data-validate>
+<div class="form-layout">
+  <div>
+    <section class="form-section" aria-labelledby="basic"><header><h2 id="basic">اطلاعات اصلی</h2></header>
+      <div class="form-group"><label class="form-label" for="title">عنوان محصول</label><input class="input" id="title" name="title" value="کیبورد مکانیکال Keychron K2" required><span class="form-error">عنوان محصول الزامی است.</span></div>
+      <div class="form-group"><label class="form-label" for="slug">نشانی اختصاصی (slug)</label><input class="input input-ltr" id="slug" name="slug" value="keychron-k2-mechanical-keyboard"><span class="form-hint">در آدرس صفحهٔ محصول استفاده می‌شود.</span></div>
+      <div class="form-group"><label class="form-label" for="desc">توضیحات</label><textarea class="textarea" id="desc" name="description" placeholder="ویژگی‌ها، ابعاد و شرایط گارانتی را بنویسید…">کیبورد مکانیکال بی‌سیم ۷۵٪ با اتصال بلوتوث و کابل، سازگار با ویندوز و مک.</textarea></div>
+      <div class="form-grid" style="margin-block-start:var(--space-4)">
+        <div class="form-group"><label class="form-label" for="price">قیمت پایه</label><div class="input-suffix"><input class="input input-ltr input-num" id="price" name="price" inputmode="numeric" value="7890000" required><span>تومان</span></div><span class="form-hint">قیمت نهایی هر گزینه = قیمت پایه + تغییر قیمت گزینه</span></div>
+        <div class="form-group"><label class="form-label" for="status">وضعیت انتشار</label><select class="select" id="status" name="status"><option value="active" selected>فعال</option><option value="draft">پیش‌نویس</option><option value="archived">بایگانی</option></select></div>
+      </div>
+      <fieldset class="form-group" style="border:0;padding:0;margin-inline:0"><legend class="form-label" style="margin-block-end:8px">دسته‌بندی‌ها</legend><div class="category-picker"><label><input type="checkbox" name="categories" value="0" checked><span>دیجیتال</span></label><label><input type="checkbox" name="categories" value="1"><span>پوشاک</span></label><label><input type="checkbox" name="categories" value="2"><span>خانه و آشپزخانه</span></label><label><input type="checkbox" name="categories" value="3"><span>کتاب</span></label><label><input type="checkbox" name="categories" value="4"><span>ورزش</span></label><label><input type="checkbox" name="categories" value="5"><span>لوازم جانبی</span></label><label><input type="checkbox" name="categories" value="6"><span>گیم</span></label><label><input type="checkbox" name="categories" value="7"><span>آموزش</span></label></div></fieldset>
+    </section>
+
+    <section class="form-section" aria-labelledby="imgs"><header><h2 id="imgs">تصاویر</h2><p>اولین تصویر به‌عنوان تصویر اصلی نمایش داده می‌شود.</p></header>
+      <div class="uploader" data-uploader><div class="upload-tile"><div class="media tone-1 "><span class="media-fallback"><i data-lucide="image"></i></span><img src="https://picsum.photos/seed/keyboard-k2-0/240/240" alt="تصویر محصول" loading="lazy" width="240" height="240"></div><span class="badge">تصویر اصلی</span><button type="button" class="remove" aria-label="حذف تصویر"><i data-lucide="x" class="icon-sm"></i></button></div><div class="upload-tile"><div class="media tone-1 "><span class="media-fallback"><i data-lucide="image"></i></span><img src="https://picsum.photos/seed/keyboard-k2-1/240/240" alt="تصویر محصول" loading="lazy" width="240" height="240"></div><button type="button" class="remove" aria-label="حذف تصویر"><i data-lucide="x" class="icon-sm"></i></button></div><label class="upload-add"><i data-lucide="image-plus"></i><span>افزودن تصویر</span><input type="file" accept="image/*" multiple data-image-input></label></div>
+    </section>
+
+    <section class="form-section" id="variants" aria-labelledby="vars"><header><h2 id="vars">گزینه‌های محصول (Variants)</h2></header>
+      <p class="variant-note"><i data-lucide="info"></i><span>هر گزینه متعلق به همین محصول است؛ مثلاً «رنگ: مشکی» یا «حافظه: ۲۵۶ گیگابایت». موجودی را برای هر گزینه جداگانه ثبت کنید.</span></p>
+      <div class="variant-table">
+        <div class="variant-head" aria-hidden="true"><span>نام گزینه</span><span>مقدار</span><span>تغییر قیمت (تومان)</span><span>موجودی</span><span></span></div>
+        <div data-variant-rows><div class="variant-row">
+  <div data-label="نام گزینه"><label class="sr-only">نام گزینه</label><input class="input" name="variant_name" value="سوئیچ" placeholder="مثلاً رنگ"></div>
+  <div data-label="مقدار"><label class="sr-only">مقدار</label><input class="input" name="variant_value" value="قرمز" placeholder="مثلاً مشکی"></div>
+  <div data-label="تغییر قیمت"><label class="sr-only">تغییر قیمت</label><input class="input input-ltr input-num" name="price_modifier" inputmode="numeric" value="0" placeholder="0"></div>
+  <div data-label="موجودی"><label class="sr-only">موجودی</label><input class="input input-ltr input-num" name="stock" inputmode="numeric" value="8" placeholder="0"></div>
+  <button type="button" class="btn-icon btn-icon-sm row-remove" data-remove-variant aria-label="حذف این گزینه"><i data-lucide="trash-2"></i></button></div><div class="variant-row">
+  <div data-label="نام گزینه"><label class="sr-only">نام گزینه</label><input class="input" name="variant_name" value="سوئیچ" placeholder="مثلاً رنگ"></div>
+  <div data-label="مقدار"><label class="sr-only">مقدار</label><input class="input" name="variant_value" value="قهوه‌ای" placeholder="مثلاً مشکی"></div>
+  <div data-label="تغییر قیمت"><label class="sr-only">تغییر قیمت</label><input class="input input-ltr input-num" name="price_modifier" inputmode="numeric" value="150000" placeholder="0"></div>
+  <div data-label="موجودی"><label class="sr-only">موجودی</label><input class="input input-ltr input-num" name="stock" inputmode="numeric" value="4" placeholder="0"></div>
+  <button type="button" class="btn-icon btn-icon-sm row-remove" data-remove-variant aria-label="حذف این گزینه"><i data-lucide="trash-2"></i></button></div><div class="variant-row">
+  <div data-label="نام گزینه"><label class="sr-only">نام گزینه</label><input class="input" name="variant_name" value="رنگ" placeholder="مثلاً رنگ"></div>
+  <div data-label="مقدار"><label class="sr-only">مقدار</label><input class="input" name="variant_value" value="مشکی" placeholder="مثلاً مشکی"></div>
+  <div data-label="تغییر قیمت"><label class="sr-only">تغییر قیمت</label><input class="input input-ltr input-num" name="price_modifier" inputmode="numeric" value="0" placeholder="0"></div>
+  <div data-label="موجودی"><label class="sr-only">موجودی</label><input class="input input-ltr input-num" name="stock" inputmode="numeric" value="12" placeholder="0"></div>
+  <button type="button" class="btn-icon btn-icon-sm row-remove" data-remove-variant aria-label="حذف این گزینه"><i data-lucide="trash-2"></i></button></div></div>
+      </div>
+      <button type="button" class="btn btn-secondary btn-sm" data-add-variant style="margin-block-start:var(--space-3)"><i data-lucide="plus"></i> افزودن گزینه</button>
+      <template id="variant-row-template"><div class="variant-row">
+  <div data-label="نام گزینه"><label class="sr-only">نام گزینه</label><input class="input" name="variant_name" value="" placeholder="مثلاً رنگ"></div>
+  <div data-label="مقدار"><label class="sr-only">مقدار</label><input class="input" name="variant_value" value="" placeholder="مثلاً مشکی"></div>
+  <div data-label="تغییر قیمت"><label class="sr-only">تغییر قیمت</label><input class="input input-ltr input-num" name="price_modifier" inputmode="numeric" value="" placeholder="0"></div>
+  <div data-label="موجودی"><label class="sr-only">موجودی</label><input class="input input-ltr input-num" name="stock" inputmode="numeric" value="" placeholder="0"></div>
+  <button type="button" class="btn-icon btn-icon-sm row-remove" data-remove-variant aria-label="حذف این گزینه"><i data-lucide="trash-2"></i></button></div></template>
+    </section>
+  </div>
+
+  <aside><div class="form-section" style="position:sticky;top:calc(var(--header-height) + var(--space-4))">
+    <header><h2>انتشار</h2></header>
+    <label class="switch"><input type="checkbox" name="is_available" checked><span class="switch-track"></span><span class="text-sm">محصول برای فروش موجود است</span></label>
+    <p class="form-hint" style="margin-block-start:8px">با خاموش کردن این گزینه، محصول «ناموجود» نمایش داده می‌شود.</p>
+    <div class="form-actions" style="flex-direction:column;margin-block-start:var(--space-5)">
+      <button type="submit" class="btn btn-primary btn-block" data-toast="تغییرات ذخیره شد">ذخیره و انتشار</button>
+      <button type="button" class="btn btn-secondary btn-block" data-save-draft>ذخیره پیش‌نویس</button>
+      <a class="btn btn-ghost btn-block" href="../panel/vendor-products.html">انصراف</a>
+    </div>
+  </div></aside>
+</div></form>
+    </div>
+  </div>
+</div></main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="navbar-logo" href="../core/index.html"><img src="assets/icons/logo.svg" alt="" width="34" height="34"><span>بازارچه</span></a>
+        <p>بازارچه جایی است که فروشندگان مستقل و خریداران یکدیگر را پیدا می‌کنند؛ هر سفارش مستقیم از فروشنده، با پیگیری شفاف.</p>
+      </div>
+      <div><h3>خرید</h3><ul class="footer-links"><li><a href="products.html">همه محصولات</a></li><li><a href="category.html">دسته‌بندی‌ها</a></li><li><a href="../cart/cart.html">سبد خرید</a></li><li><a href="../order/orders.html">پیگیری سفارش</a></li></ul></div>
+      <div><h3>فروش</h3><ul class="footer-links"><li><a href="../accounts/register.html">ثبت‌نام فروشنده</a></li><li><a href="../panel/vendor-dashboard.html">پنل فروشنده</a></li><li><a href="product-form.html">افزودن محصول</a></li></ul></div>
+      <div><h3>پشتیبانی</h3><ul class="footer-links"><li><a href="../order/states.html">راهنمای خرید</a></li><li><a href="../order/states.html">قوانین و مقررات</a></li><li><a href="../order/states.html">تماس با ما</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© ۱۴۰۵ بازارچه. نمونهٔ اولیهٔ رابط کاربری.</span><span>نسخه نمایشی؛ هیچ پرداخت یا سفارش واقعی ثبت نمی‌شود.</span></div>
+  </div>
+</footer>
+<script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
+<script src="js/app.js"></script><script src="js/dashboard.js"></script>
+</body>
+</html>

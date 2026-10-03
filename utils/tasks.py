@@ -8,7 +8,7 @@ from notifications.models import Notification
 def send_notification(notification_id):
     notification = Notification.objects.get(id=notification_id)
     channel_layer = get_channel_layer()
-    group_name = f'seller_{notification.recipient_id}'
+    group_name = f'user_{notification.recipient_id}'
 
     async_to_sync(channel_layer.group_send)(
         group_name,

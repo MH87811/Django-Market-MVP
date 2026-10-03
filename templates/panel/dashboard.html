@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>پروفایل | بازارچه</title>
+  <title>داشبورد | بازارچه</title>
   <meta name="description" content="بازارچه، نمونهٔ اولیهٔ بازار آنلاین">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,28 +37,28 @@
         <button type="button" class="btn-icon" data-dropdown-toggle aria-expanded="false" aria-controls="notifications-menu" aria-label="اعلان‌ها"><i data-lucide="bell"></i><span class="icon-dot" data-notification-dot></span></button>
         <div class="dropdown-menu dropdown-menu--start dropdown-menu--notifications" id="notifications-menu" data-dropdown-menu hidden>
           <div class="dropdown-head"><h2>اعلان‌ها</h2><button type="button" class="link-button" data-mark-all-read>علامت‌گذاری همه به‌عنوان خوانده‌شده</button></div>
-          <div class="notification-list"><a class="notification-item notification-item--success is-unread" href="../panel/notifications.html">
+          <div class="notification-list"><a class="notification-item notification-item--success is-unread" href="notifications.html">
   <span class="notification-icon"><i data-lucide="package-check"></i></span>
   <span class="notification-body"><strong>سفارش شما ارسال شد</strong><time>۲ ساعت پیش</time></span>
-</a><a class="notification-item notification-item--info is-unread" href="../panel/notifications.html">
+</a><a class="notification-item notification-item--info is-unread" href="notifications.html">
   <span class="notification-icon"><i data-lucide="shopping-bag"></i></span>
   <span class="notification-body"><strong>سفارش جدید ثبت شد</strong><time>۵ ساعت پیش</time></span>
-</a><a class="notification-item notification-item--warning is-unread" href="../panel/notifications.html">
+</a><a class="notification-item notification-item--warning is-unread" href="notifications.html">
   <span class="notification-icon"><i data-lucide="triangle-alert"></i></span>
   <span class="notification-body"><strong>موجودی رو به اتمام است</strong><time>دیروز</time></span>
 </a></div>
-          <a class="dropdown-foot" href="../panel/notifications.html">مشاهده همه اعلان‌ها</a>
+          <a class="dropdown-foot" href="notifications.html">مشاهده همه اعلان‌ها</a>
         </div>
       </div>
       <div class="dropdown navbar-account-desktop" data-dropdown>
         <button type="button" class="navbar-account" data-dropdown-toggle aria-expanded="false" aria-controls="account-menu"><span class="avatar" aria-hidden="true">ع</span><span class="navbar-account-label">حساب کاربری</span><i data-lucide="chevron-down" class="icon-sm"></i></button>
         <div class="dropdown-menu dropdown-menu--start" id="account-menu" data-dropdown-menu hidden>
-          <a class="dropdown-item" href="../panel/dashboard.html"><i data-lucide="layout-dashboard"></i>داشبورد</a>
+          <a class="dropdown-item" href="dashboard.html"><i data-lucide="layout-dashboard"></i>داشبورد</a>
           <a class="dropdown-item" href="../order/orders.html"><i data-lucide="receipt"></i>سفارش‌های من</a>
-          <a class="dropdown-item" href="profile.html"><i data-lucide="user-round"></i>پروفایل</a>
-          <a class="dropdown-item" href="../panel/vendor-dashboard.html"><i data-lucide="store"></i>پنل فروشنده</a>
+          <a class="dropdown-item" href="../accounts/profile.html"><i data-lucide="user-round"></i>پروفایل</a>
+          <a class="dropdown-item" href="vendor-dashboard.html"><i data-lucide="store"></i>پنل فروشنده</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="login.html"><i data-lucide="log-out"></i>خروج</a>
+          <a class="dropdown-item" href="../accounts/login.html"><i data-lucide="log-out"></i>خروج</a>
         </div>
       </div>
     </div>
@@ -72,11 +72,11 @@
       <p class="mobile-menu-title">دسته‌بندی‌ها</p>
       <a href="../products/category.html"><i data-lucide="laptop"></i>دیجیتال</a><a href="../products/category.html"><i data-lucide="shirt"></i>پوشاک</a><a href="../products/category.html"><i data-lucide="cooking-pot"></i>خانه و آشپزخانه</a><a href="../products/category.html"><i data-lucide="book-open"></i>کتاب</a><a href="../products/category.html"><i data-lucide="dumbbell"></i>ورزش</a><a href="../products/category.html"><i data-lucide="cable"></i>لوازم جانبی</a>
       <p class="mobile-menu-title">حساب کاربری</p>
-      <a href="../panel/dashboard.html"><i data-lucide="layout-dashboard"></i>داشبورد</a>
+      <a href="dashboard.html"><i data-lucide="layout-dashboard"></i>داشبورد</a>
       <a href="../order/orders.html"><i data-lucide="receipt"></i>سفارش‌ها</a>
-      <a href="profile.html"><i data-lucide="user-round"></i>پروفایل</a>
-      <a href="../panel/vendor-dashboard.html"><i data-lucide="store"></i>پنل فروشنده</a>
-      <a href="login.html"><i data-lucide="log-in"></i>ورود / ثبت‌نام</a>
+      <a href="../accounts/profile.html"><i data-lucide="user-round"></i>پروفایل</a>
+      <a href="vendor-dashboard.html"><i data-lucide="store"></i>پنل فروشنده</a>
+      <a href="../accounts/login.html"><i data-lucide="log-in"></i>ورود / ثبت‌نام</a>
     </div>
   </nav>
 </header>
@@ -86,38 +86,33 @@
   <div class="panel-header"><strong>منوی پنل</strong><button type="button" class="btn-icon btn-icon-sm" data-panel-close aria-label="بستن منو"><i data-lucide="x"></i></button></div>
   <div class="sidebar-inner">
     <div class="sidebar-user"><span class="avatar avatar-md" aria-hidden="true">ع</span><div><strong>علی رضایی</strong><span>حساب خریدار</span></div></div>
-    <nav class="sidebar-nav" aria-label="حساب خریدار"><a href="../panel/dashboard.html"><i data-lucide="layout-dashboard"></i>نمای کلی</a><a href="../order/orders.html"><i data-lucide="receipt"></i>سفارش‌ها</a><a href="../cart/cart.html"><i data-lucide="shopping-cart"></i>سبد خرید</a><a href="../panel/notifications.html"><i data-lucide="bell"></i>اعلان‌ها</a><a href="profile.html" aria-current="page"><i data-lucide="user-round"></i>پروفایل</a>
+    <nav class="sidebar-nav" aria-label="حساب خریدار"><a href="dashboard.html" aria-current="page"><i data-lucide="layout-dashboard"></i>نمای کلی</a><a href="../order/orders.html"><i data-lucide="receipt"></i>سفارش‌ها</a><a href="../cart/cart.html"><i data-lucide="shopping-cart"></i>سبد خرید</a><a href="notifications.html"><i data-lucide="bell"></i>اعلان‌ها</a><a href="../accounts/profile.html"><i data-lucide="user-round"></i>پروفایل</a>
       <p class="sidebar-nav-title">میان‌بر</p>
-      <a href="../panel/vendor-dashboard.html"><i data-lucide="store"></i>رفتن به پنل فروشنده</a>
-      <a href="login.html"><i data-lucide="log-out"></i>خروج از حساب</a>
+      <a href="vendor-dashboard.html"><i data-lucide="store"></i>رفتن به پنل فروشنده</a>
+      <a href="../accounts/login.html"><i data-lucide="log-out"></i>خروج از حساب</a>
     </nav>
   </div>
 </aside>
     <div>
-      <div class="dashboard-topbar"><strong>پروفایل</strong><button type="button" class="btn btn-secondary btn-sm" data-panel-toggle="dashboard-sidebar" aria-controls="dashboard-sidebar" aria-expanded="false"><i data-lucide="menu"></i> منوی پنل</button></div>
-      <div class="page-header"><div><h1>پروفایل</h1><p>اطلاعات شخصی و فروشگاه خود را ویرایش کنید</p></div></div>
-<form action="profile.html" method="get" data-validate>
-  <section class="form-section" aria-labelledby="pp"><header><h2 id="pp">اطلاعات شخصی</h2></header>
-    <div class="avatar-upload" style="margin-block-end:var(--space-5)"><span class="avatar avatar-lg" aria-hidden="true">ع</span><div><label class="btn btn-secondary btn-sm" style="position:relative"><i data-lucide="upload" class="icon-sm"></i> تغییر تصویر<input type="file" accept="image/*" class="sr-only" aria-label="انتخاب تصویر پروفایل"></label><p class="form-hint" style="margin-block-start:6px">JPG یا PNG، حداکثر ۲ مگابایت</p></div></div>
-    <div class="form-grid">
-      <div class="form-group"><label class="form-label" for="fn">نام</label><input class="input" id="fn" name="first_name" value="علی" required><span class="form-error">نام را وارد کنید.</span></div>
-      <div class="form-group"><label class="form-label" for="ln">نام خانوادگی</label><input class="input" id="ln" name="last_name" value="رضایی" required><span class="form-error">نام خانوادگی را وارد کنید.</span></div>
-      <div class="form-group span-2"><label class="form-label" for="bio">دربارهٔ من <span class="optional">(اختیاری)</span></label><textarea class="textarea" id="bio" name="bio" style="min-height:96px">علاقه‌مند به تجهیزات کار و گیمینگ.</textarea></div>
-      <div class="form-group span-2"><label class="form-label" for="addr">نشانی</label><textarea class="textarea" id="addr" name="address" style="min-height:84px">تهران، خیابان ولیعصر، نرسیده به میدان ونک، کوچهٔ سوم، پلاک ۱۲، واحد ۴</textarea></div>
-      <div class="form-group"><label class="form-label" for="pz">کد پستی</label><input class="input input-ltr input-num" id="pz" name="postal_code" inputmode="numeric" value="1968713451" maxlength="10"></div>
-    </div>
-  </section>
-
-  <section class="form-section" aria-labelledby="vp"><header class="row-between" style="align-items:flex-start"><div><h2 id="vp">اطلاعات فروشگاه</h2><p>این بخش فقط برای حساب‌های فروشنده نمایش داده می‌شود.</p></div><span class="badge badge-primary">فروشنده</span></header>
-    <div class="avatar-upload" style="margin-block-end:var(--space-5)"><span class="vendor-logo tone-1" aria-hidden="true" style="width:72px;height:72px;font-size:var(--text-xl)">T</span><div><label class="btn btn-secondary btn-sm" style="position:relative"><i data-lucide="upload" class="icon-sm"></i> تغییر لوگو<input type="file" accept="image/*" class="sr-only" aria-label="انتخاب لوگوی فروشگاه"></label><p class="form-hint" style="margin-block-start:6px">تصویر مربعی با حداقل ۲۵۶ پیکسل</p></div></div>
-    <div class="form-grid">
-      <div class="form-group"><label class="form-label" for="shop">نام فروشگاه</label><input class="input input-ltr" id="shop" name="shop_name" value="TechStore" required><span class="form-error">نام فروشگاه الزامی است.</span></div>
-      <div class="form-group"><label class="form-label" for="shop-city">شهر</label><input class="input" id="shop-city" name="shop_city" value="تهران"></div>
-      <div class="form-group span-2"><label class="form-label" for="shop-info">معرفی فروشگاه</label><textarea class="textarea" id="shop-info" name="shop_info" style="min-height:96px">عرضهٔ گجت و لوازم جانبی کاربردی با ضمانت اصالت و ارسال سریع.</textarea></div>
-    </div>
-  </section>
-  <div class="form-actions"><a class="btn btn-secondary" href="../panel/dashboard.html">انصراف</a><button type="submit" class="btn btn-primary" data-toast="پروفایل ذخیره شد">ذخیره تغییرات</button></div>
-</form>
+      <div class="dashboard-topbar"><strong>داشبورد</strong><button type="button" class="btn btn-secondary btn-sm" data-panel-toggle="dashboard-sidebar" aria-controls="dashboard-sidebar" aria-expanded="false"><i data-lucide="menu"></i> منوی پنل</button></div>
+      <div class="welcome"><div><h1>سلام علی، خوش آمدید</h1><p>خلاصهٔ فعالیت‌های اخیر شما</p></div><a class="btn btn-primary" href="../products/products.html"><i data-lucide="shopping-bag"></i> ادامه خرید</a></div>
+<div class="stat-grid"><div class="dashboard-card"><div class="dashboard-card-top"><span>کل سفارش‌ها</span><span class="dashboard-card-icon "><i data-lucide="receipt"></i></span></div><div class="dashboard-card-value">۱۸</div></div><div class="dashboard-card"><div class="dashboard-card-top"><span>در انتظار پرداخت</span><span class="dashboard-card-icon is-warning"><i data-lucide="clock"></i></span></div><div class="dashboard-card-value">۱</div></div><div class="dashboard-card"><div class="dashboard-card-top"><span>سفارش‌های تکمیل‌شده</span><span class="dashboard-card-icon is-success"><i data-lucide="package-check"></i></span></div><div class="dashboard-card-value">۱۱</div></div><div class="dashboard-card"><div class="dashboard-card-top"><span>مجموع خرید</span><span class="dashboard-card-icon is-info"><i data-lucide="wallet"></i></span></div><div class="dashboard-card-value">۸۴٫۳<small> میلیون تومان</small></div></div></div>
+<div class="dashboard-grid">
+  <section class="card" style="margin:0" aria-labelledby="ro"><div class="card-header"><h2 id="ro">آخرین سفارش‌ها</h2><a class="section-link" href="../order/orders.html">همه سفارش‌ها</a></div><div class="table-wrap"><table class="table table-stack"><thead><tr><th scope="col">سفارش</th><th scope="col">فروشنده</th><th scope="col">تاریخ</th><th scope="col">مبلغ</th><th scope="col">وضعیت</th></tr></thead><tbody><tr><td class="cell-main" data-label="سفارش"><a class="fw-600" href="../order/order-detail.html">#۱۰۲۴۸۷</a></td><td data-label="فروشنده">TechStore</td><td data-label="تاریخ">۱۴۰۵/۰۷/۰۹</td><td data-label="مبلغ" class="num">۱۲٬۶۷۰٬۰۰۰ تومان</td><td data-label="وضعیت"><span class="badge badge-dot status-shipped" >ارسال شده</span></td></tr><tr><td class="cell-main" data-label="سفارش"><a class="fw-600" href="../order/order-detail.html">#۱۰۲۴۷۱</a></td><td data-label="فروشنده">Nova Shop</td><td data-label="تاریخ">۱۴۰۵/۰۷/۰۵</td><td data-label="مبلغ" class="num">۲٬۶۵۰٬۰۰۰ تومان</td><td data-label="وضعیت"><span class="badge badge-dot status-delivered" >تحویل داده شده</span></td></tr><tr><td class="cell-main" data-label="سفارش"><a class="fw-600" href="../order/order-detail.html">#۱۰۲۴۵۸</a></td><td data-label="فروشنده">Pixel Market</td><td data-label="تاریخ">۱۴۰۵/۰۷/۰۲</td><td data-label="مبلغ" class="num">۲۴٬۵۰۰٬۰۰۰ تومان</td><td data-label="وضعیت"><span class="badge badge-dot status-paid" >پرداخت شده</span></td></tr><tr><td class="cell-main" data-label="سفارش"><a class="fw-600" href="../order/order-detail.html">#۱۰۲۴۴۰</a></td><td data-label="فروشنده">DigiCenter</td><td data-label="تاریخ">۱۴۰۵/۰۶/۲۹</td><td data-label="مبلغ" class="num">۱۹٬۹۰۰٬۰۰۰ تومان</td><td data-label="وضعیت"><span class="badge badge-dot status-pending" >در انتظار پرداخت</span></td></tr></tbody></table></div></section>
+  <section class="card" style="margin:0" aria-labelledby="rn"><div class="card-header"><h2 id="rn">اعلان‌های اخیر</h2><a class="section-link" href="notifications.html">همه</a></div><div class="notification-list"><a class="notification-item notification-item--success is-unread" href="notifications.html">
+  <span class="notification-icon"><i data-lucide="package-check"></i></span>
+  <span class="notification-body"><strong>سفارش شما ارسال شد</strong><time>۲ ساعت پیش</time></span>
+</a><a class="notification-item notification-item--info is-unread" href="notifications.html">
+  <span class="notification-icon"><i data-lucide="shopping-bag"></i></span>
+  <span class="notification-body"><strong>سفارش جدید ثبت شد</strong><time>۵ ساعت پیش</time></span>
+</a><a class="notification-item notification-item--warning is-unread" href="notifications.html">
+  <span class="notification-icon"><i data-lucide="triangle-alert"></i></span>
+  <span class="notification-body"><strong>موجودی رو به اتمام است</strong><time>دیروز</time></span>
+</a><a class="notification-item notification-item--success is-read" href="notifications.html">
+  <span class="notification-icon"><i data-lucide="circle-check"></i></span>
+  <span class="notification-body"><strong>محصول شما با موفقیت ایجاد شد</strong><time>۲ روز پیش</time></span>
+</a></div></section>
+</div>
     </div>
   </div>
 </div></main>
@@ -129,7 +124,7 @@
         <p>بازارچه جایی است که فروشندگان مستقل و خریداران یکدیگر را پیدا می‌کنند؛ هر سفارش مستقیم از فروشنده، با پیگیری شفاف.</p>
       </div>
       <div><h3>خرید</h3><ul class="footer-links"><li><a href="../products/products.html">همه محصولات</a></li><li><a href="../products/category.html">دسته‌بندی‌ها</a></li><li><a href="../cart/cart.html">سبد خرید</a></li><li><a href="../order/orders.html">پیگیری سفارش</a></li></ul></div>
-      <div><h3>فروش</h3><ul class="footer-links"><li><a href="register.html">ثبت‌نام فروشنده</a></li><li><a href="../panel/vendor-dashboard.html">پنل فروشنده</a></li><li><a href="../products/product-form.html">افزودن محصول</a></li></ul></div>
+      <div><h3>فروش</h3><ul class="footer-links"><li><a href="../accounts/register.html">ثبت‌نام فروشنده</a></li><li><a href="vendor-dashboard.html">پنل فروشنده</a></li><li><a href="../products/product-form.html">افزودن محصول</a></li></ul></div>
       <div><h3>پشتیبانی</h3><ul class="footer-links"><li><a href="../order/states.html">راهنمای خرید</a></li><li><a href="../order/states.html">قوانین و مقررات</a></li><li><a href="../order/states.html">تماس با ما</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>© ۱۴۰۵ بازارچه. نمونهٔ اولیهٔ رابط کاربری.</span><span>نسخه نمایشی؛ هیچ پرداخت یا سفارش واقعی ثبت نمی‌شود.</span></div>

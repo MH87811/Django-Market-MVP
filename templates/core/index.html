@@ -1,13 +1,347 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Index</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>خرید و فروش آنلاین | بازارچه</title>
+  <meta name="description" content="بازارچه، نمونهٔ اولیهٔ بازار آنلاین">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
-<body>
+<body class="">
+<a class="skip-link" href="#main">پرش به محتوای اصلی</a>
+<header class="navbar" id="site-header">
+  <div class="container navbar-inner">
+    <button type="button" class="btn-icon navbar-toggle" data-panel-toggle="mobile-menu" aria-controls="mobile-menu" aria-expanded="false" aria-label="باز کردن منو"><i data-lucide="menu"></i></button>
+    <a class="navbar-logo" href="index.html" aria-label="بازارچه، صفحه اصلی"><img src="assets/icons/logo.svg" alt="" width="34" height="34"><span>بازارچه</span></a>
 
+    <div class="dropdown navbar-categories" data-dropdown>
+      <button type="button" class="btn btn-ghost" data-dropdown-toggle aria-expanded="false" aria-controls="categories-menu"><i data-lucide="layout-grid"></i> دسته‌بندی‌ها <i data-lucide="chevron-down" class="icon-sm"></i></button>
+      <div class="dropdown-menu dropdown-menu--start dropdown-menu--categories" id="categories-menu" data-dropdown-menu hidden><a class="dropdown-item" href="../products/category.html"><i data-lucide="laptop"></i>دیجیتال</a><a class="dropdown-item" href="../products/category.html"><i data-lucide="shirt"></i>پوشاک</a><a class="dropdown-item" href="../products/category.html"><i data-lucide="cooking-pot"></i>خانه و آشپزخانه</a><a class="dropdown-item" href="../products/category.html"><i data-lucide="book-open"></i>کتاب</a><a class="dropdown-item" href="../products/category.html"><i data-lucide="dumbbell"></i>ورزش</a><a class="dropdown-item" href="../products/category.html"><i data-lucide="cable"></i>لوازم جانبی</a><a class="dropdown-item" href="../products/category.html"><i data-lucide="gamepad-2"></i>گیم</a><a class="dropdown-item" href="../products/category.html"><i data-lucide="graduation-cap"></i>آموزش</a></div>
+    </div>
+
+    <form class="search-bar navbar-search" role="search" action="../products/products.html" method="get">
+      <label class="sr-only" for="nav-search">جستجوی محصولات</label>
+      <span class="search-bar-icon"><i data-lucide="search"></i></span>
+      <input class="input" id="nav-search" type="search" name="q" placeholder="جستجوی محصولات، دسته‌بندی‌ها و فروشندگان…" autocomplete="off">
+    </form>
+
+    <div class="navbar-actions">
+      <a class="btn-icon" href="../cart/cart.html" aria-label="سبد خرید"><i data-lucide="shopping-cart"></i><span class="icon-badge" data-cart-count>۴</span></a>
+      <div class="dropdown" data-dropdown>
+        <button type="button" class="btn-icon" data-dropdown-toggle aria-expanded="false" aria-controls="notifications-menu" aria-label="اعلان‌ها"><i data-lucide="bell"></i><span class="icon-dot" data-notification-dot></span></button>
+        <div class="dropdown-menu dropdown-menu--start dropdown-menu--notifications" id="notifications-menu" data-dropdown-menu hidden>
+          <div class="dropdown-head"><h2>اعلان‌ها</h2><button type="button" class="link-button" data-mark-all-read>علامت‌گذاری همه به‌عنوان خوانده‌شده</button></div>
+          <div class="notification-list"><a class="notification-item notification-item--success is-unread" href="../panel/notifications.html">
+  <span class="notification-icon"><i data-lucide="package-check"></i></span>
+  <span class="notification-body"><strong>سفارش شما ارسال شد</strong><time>۲ ساعت پیش</time></span>
+</a><a class="notification-item notification-item--info is-unread" href="../panel/notifications.html">
+  <span class="notification-icon"><i data-lucide="shopping-bag"></i></span>
+  <span class="notification-body"><strong>سفارش جدید ثبت شد</strong><time>۵ ساعت پیش</time></span>
+</a><a class="notification-item notification-item--warning is-unread" href="../panel/notifications.html">
+  <span class="notification-icon"><i data-lucide="triangle-alert"></i></span>
+  <span class="notification-body"><strong>موجودی رو به اتمام است</strong><time>دیروز</time></span>
+</a></div>
+          <a class="dropdown-foot" href="../panel/notifications.html">مشاهده همه اعلان‌ها</a>
+        </div>
+      </div>
+      <div class="dropdown navbar-account-desktop" data-dropdown>
+        <button type="button" class="navbar-account" data-dropdown-toggle aria-expanded="false" aria-controls="account-menu"><span class="avatar" aria-hidden="true">ع</span><span class="navbar-account-label">حساب کاربری</span><i data-lucide="chevron-down" class="icon-sm"></i></button>
+        <div class="dropdown-menu dropdown-menu--start" id="account-menu" data-dropdown-menu hidden>
+          <a class="dropdown-item" href="../panel/dashboard.html"><i data-lucide="layout-dashboard"></i>داشبورد</a>
+          <a class="dropdown-item" href="../order/orders.html"><i data-lucide="receipt"></i>سفارش‌های من</a>
+          <a class="dropdown-item" href="../accounts/profile.html"><i data-lucide="user-round"></i>پروفایل</a>
+          <a class="dropdown-item" href="../panel/vendor-dashboard.html"><i data-lucide="store"></i>پنل فروشنده</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="../accounts/login.html"><i data-lucide="log-out"></i>خروج</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="mobile-menu panel" id="mobile-menu" aria-label="منوی اصلی">
+    <div class="panel-header"><a class="navbar-logo" href="index.html"><img src="assets/icons/logo.svg" alt="" width="30" height="30"><span>بازارچه</span></a><button type="button" class="btn-icon btn-icon-sm" data-panel-close aria-label="بستن منو"><i data-lucide="x"></i></button></div>
+    <div class="mobile-menu-body mobile-menu-links">
+      <a href="index.html"><i data-lucide="house"></i>صفحه اصلی</a>
+      <a href="../products/products.html"><i data-lucide="package"></i>همه محصولات</a>
+      <p class="mobile-menu-title">دسته‌بندی‌ها</p>
+      <a href="../products/category.html"><i data-lucide="laptop"></i>دیجیتال</a><a href="../products/category.html"><i data-lucide="shirt"></i>پوشاک</a><a href="../products/category.html"><i data-lucide="cooking-pot"></i>خانه و آشپزخانه</a><a href="../products/category.html"><i data-lucide="book-open"></i>کتاب</a><a href="../products/category.html"><i data-lucide="dumbbell"></i>ورزش</a><a href="../products/category.html"><i data-lucide="cable"></i>لوازم جانبی</a>
+      <p class="mobile-menu-title">حساب کاربری</p>
+      <a href="../panel/dashboard.html"><i data-lucide="layout-dashboard"></i>داشبورد</a>
+      <a href="../order/orders.html"><i data-lucide="receipt"></i>سفارش‌ها</a>
+      <a href="../accounts/profile.html"><i data-lucide="user-round"></i>پروفایل</a>
+      <a href="../panel/vendor-dashboard.html"><i data-lucide="store"></i>پنل فروشنده</a>
+      <a href="../accounts/login.html"><i data-lucide="log-in"></i>ورود / ثبت‌نام</a>
+    </div>
+  </nav>
+</header>
+<main id="main">
+<div class="container">
+  <section class="hero" aria-labelledby="hero-title">
+    <h1 id="hero-title">خرید و فروش، ساده‌تر از همیشه</h1>
+    <p>محصول مورد نظرت رو از فروشنده‌های مستقل پیدا کن</p>
+    <form class="hero-search" role="search" action="../products/products.html" method="get">
+      <div class="search-bar">
+        <label class="sr-only" for="hero-q">جستجو</label>
+        <span class="search-bar-icon"><i data-lucide="search"></i></span>
+        <input class="input" id="hero-q" type="search" name="q" placeholder="جستجوی محصولات، دسته‌بندی‌ها و فروشندگان" autocomplete="off">
+        <button class="btn btn-primary" type="submit">جستجو</button>
+      </div>
+    </form>
+    <div class="hero-chips"><span>پرجستجو:</span><a class="chip" href="../products/products.html">کیبورد مکانیکال</a><a class="chip" href="../products/products.html">گوشی موبایل</a><a class="chip" href="../products/products.html">هدست گیمینگ</a><a class="chip" href="../products/products.html">کوله‌پشتی</a></div>
+  </section>
+
+  <section class="section" style="margin-block-start:var(--space-5)" aria-labelledby="cats-title">
+    <div class="section-header"><h2 id="cats-title">دسته‌بندی‌ها</h2><a class="section-link" href="../products/category.html">همه دسته‌بندی‌ها <i data-lucide="arrow-left" class="icon-sm"></i></a></div>
+    <div class="category-grid"><a class="category-card" href="../products/category.html">
+  <div class="media category-card-media tone-1"><span class="media-fallback"><i data-lucide="laptop"></i></span></div>
+  <h3>دیجیتال</h3><span>۱۲۴۰ محصول</span>
+</a><a class="category-card" href="../products/category.html">
+  <div class="media category-card-media tone-2"><span class="media-fallback"><i data-lucide="shirt"></i></span></div>
+  <h3>پوشاک</h3><span>۳۵۶۰ محصول</span>
+</a><a class="category-card" href="../products/category.html">
+  <div class="media category-card-media tone-4"><span class="media-fallback"><i data-lucide="cooking-pot"></i></span></div>
+  <h3>خانه و آشپزخانه</h3><span>۲۱۸۰ محصول</span>
+</a><a class="category-card" href="../products/category.html">
+  <div class="media category-card-media tone-5"><span class="media-fallback"><i data-lucide="book-open"></i></span></div>
+  <h3>کتاب</h3><span>۴۱۲۰ محصول</span>
+</a><a class="category-card" href="../products/category.html">
+  <div class="media category-card-media tone-3"><span class="media-fallback"><i data-lucide="dumbbell"></i></span></div>
+  <h3>ورزش</h3><span>۸۶۰ محصول</span>
+</a><a class="category-card" href="../products/category.html">
+  <div class="media category-card-media tone-6"><span class="media-fallback"><i data-lucide="cable"></i></span></div>
+  <h3>لوازم جانبی</h3><span>۱۹۳۰ محصول</span>
+</a><a class="category-card" href="../products/category.html">
+  <div class="media category-card-media tone-1"><span class="media-fallback"><i data-lucide="gamepad-2"></i></span></div>
+  <h3>گیم</h3><span>۷۴۰ محصول</span>
+</a><a class="category-card" href="../products/category.html">
+  <div class="media category-card-media tone-4"><span class="media-fallback"><i data-lucide="graduation-cap"></i></span></div>
+  <h3>آموزش</h3><span>۵۲۰ محصول</span>
+</a></div>
+  </section>
+
+  <section class="section" aria-labelledby="featured-title">
+    <div class="section-header"><div><h2 id="featured-title">محصولات ویژه</h2><p>پرفروش‌ترین‌های این هفته</p></div><a class="section-link" href="../products/products.html">مشاهده همه <i data-lucide="arrow-left" class="icon-sm"></i></a></div>
+    <div class="product-grid"><article class="product-card">
+  <div class="media product-card-media tone-1">
+    <span class="media-fallback"><i data-lucide="smartphone"></i></span>
+    <img src="https://picsum.photos/seed/galaxy-a55/480/480" alt="گوشی موبایل Samsung Galaxy A55" loading="lazy" width="480" height="480">
+    <a href="../products/product-detail.html" tabindex="-1" aria-hidden="true"></a>
+    <span class="badge product-card-discount">۹٪</span>
+    <button type="button" class="favorite-btn" data-favorite aria-pressed="false" aria-label="افزودن به علاقه‌مندی‌ها"><i data-lucide="heart"></i></button>
+  </div>
+  <div class="product-card-body">
+    <div class="product-card-meta"><span>دیجیتال</span><span class="product-card-variants"><i data-lucide="palette"></i> ۳ رنگ، ۲ حافظه</span></div>
+    <h3 class="product-card-title"><a href="../products/product-detail.html">گوشی موبایل Samsung Galaxy A55</a></h3>
+    <a class="product-card-vendor" href="../products/products.html"><i data-lucide="store" class="icon-sm"></i> فروشگاه Pixel Market</a>
+    <div class="product-card-footer">
+      <div class="price"><span class="price-old">۲۶٬۹۰۰٬۰۰۰</span><span class="price-current">۲۴٬۵۰۰٬۰۰۰ <small>تومان</small></span></div>
+      <span class="stock stock-in">موجود</span>
+    </div>
+  </div>
+</article>
+<article class="product-card">
+  <div class="media product-card-media tone-1">
+    <span class="media-fallback"><i data-lucide="keyboard"></i></span>
+    <img src="https://picsum.photos/seed/keyboard-k2/480/480" alt="کیبورد مکانیکال Keychron K2" loading="lazy" width="480" height="480">
+    <a href="../products/product-detail.html" tabindex="-1" aria-hidden="true"></a>
+    <span class="badge product-card-discount">۷٪</span>
+    <button type="button" class="favorite-btn" data-favorite aria-pressed="false" aria-label="افزودن به علاقه‌مندی‌ها"><i data-lucide="heart"></i></button>
+  </div>
+  <div class="product-card-body">
+    <div class="product-card-meta"><span>دیجیتال</span><span class="product-card-variants"><i data-lucide="palette"></i> ۳ سوئیچ</span></div>
+    <h3 class="product-card-title"><a href="../products/product-detail.html">کیبورد مکانیکال Keychron K2</a></h3>
+    <a class="product-card-vendor" href="../products/products.html"><i data-lucide="store" class="icon-sm"></i> فروشگاه TechStore</a>
+    <div class="product-card-footer">
+      <div class="price"><span class="price-old">۸٬۴۹۰٬۰۰۰</span><span class="price-current">۷٬۸۹۰٬۰۰۰ <small>تومان</small></span></div>
+      <span class="stock stock-in">موجود</span>
+    </div>
+  </div>
+</article>
+<article class="product-card">
+  <div class="media product-card-media tone-5">
+    <span class="media-fallback"><i data-lucide="mouse"></i></span>
+    <img src="https://picsum.photos/seed/mx-master/480/480" alt="ماوس بی‌سیم Logitech MX Master 3S" loading="lazy" width="480" height="480">
+    <a href="../products/product-detail.html" tabindex="-1" aria-hidden="true"></a>
+    
+    <button type="button" class="favorite-btn" data-favorite aria-pressed="false" aria-label="افزودن به علاقه‌مندی‌ها"><i data-lucide="heart"></i></button>
+  </div>
+  <div class="product-card-body">
+    <div class="product-card-meta"><span>لوازم جانبی</span><span class="product-card-variants"><i data-lucide="palette"></i> ۲ رنگ</span></div>
+    <h3 class="product-card-title"><a href="../products/product-detail.html">ماوس بی‌سیم Logitech MX Master 3S</a></h3>
+    <a class="product-card-vendor" href="../products/products.html"><i data-lucide="store" class="icon-sm"></i> فروشگاه DigiCenter</a>
+    <div class="product-card-footer">
+      <div class="price"><span class="price-current">۶٬۲۵۰٬۰۰۰ <small>تومان</small></span></div>
+      <span class="stock stock-in">موجود</span>
+    </div>
+  </div>
+</article>
+<article class="product-card">
+  <div class="media product-card-media tone-6">
+    <span class="media-fallback"><i data-lucide="headphones"></i></span>
+    <img src="https://picsum.photos/seed/hyperx-cloud/480/480" alt="هدست گیمینگ HyperX Cloud II" loading="lazy" width="480" height="480">
+    <a href="../products/product-detail.html" tabindex="-1" aria-hidden="true"></a>
+    <span class="badge product-card-discount">۹٪</span>
+    <button type="button" class="favorite-btn" data-favorite aria-pressed="false" aria-label="افزودن به علاقه‌مندی‌ها"><i data-lucide="heart"></i></button>
+  </div>
+  <div class="product-card-body">
+    <div class="product-card-meta"><span>گیم</span><span class="product-card-variants"><i data-lucide="palette"></i> ۲ رنگ</span></div>
+    <h3 class="product-card-title"><a href="../products/product-detail.html">هدست گیمینگ HyperX Cloud II</a></h3>
+    <a class="product-card-vendor" href="../products/products.html"><i data-lucide="store" class="icon-sm"></i> فروشگاه Pixel Market</a>
+    <div class="product-card-footer">
+      <div class="price"><span class="price-old">۴٬۶۰۰٬۰۰۰</span><span class="price-current">۴٬۱۸۰٬۰۰۰ <small>تومان</small></span></div>
+      <span class="stock stock-in">موجود</span>
+    </div>
+  </div>
+</article></div>
+  </section>
+
+  <section class="section" aria-labelledby="new-title">
+    <div class="section-header"><div><h2 id="new-title">تازه‌ترین محصولات</h2><p>همین امروز توسط فروشنده‌ها اضافه شده‌اند</p></div><a class="section-link" href="../products/products.html">مشاهده همه <i data-lucide="arrow-left" class="icon-sm"></i></a></div>
+    <div class="product-grid"><article class="product-card">
+  <div class="media product-card-media tone-4">
+    <span class="media-fallback"><i data-lucide="backpack"></i></span>
+    <img src="https://picsum.photos/seed/backpack/480/480" alt="کوله‌پشتی ضدآب لپ‌تاپ ۱۵٫۶ اینچ" loading="lazy" width="480" height="480">
+    <a href="../products/product-detail.html" tabindex="-1" aria-hidden="true"></a>
+    <span class="badge product-card-discount">۱۴٪</span>
+    <button type="button" class="favorite-btn" data-favorite aria-pressed="false" aria-label="افزودن به علاقه‌مندی‌ها"><i data-lucide="heart"></i></button>
+  </div>
+  <div class="product-card-body">
+    <div class="product-card-meta"><span>لوازم جانبی</span><span class="product-card-variants"><i data-lucide="palette"></i> ۲ رنگ</span></div>
+    <h3 class="product-card-title"><a href="../products/product-detail.html">کوله‌پشتی ضدآب لپ‌تاپ ۱۵٫۶ اینچ</a></h3>
+    <a class="product-card-vendor" href="../products/products.html"><i data-lucide="store" class="icon-sm"></i> فروشگاه Nova Shop</a>
+    <div class="product-card-footer">
+      <div class="price"><span class="price-old">۱٬۳۹۰٬۰۰۰</span><span class="price-current">۱٬۲۰۰٬۰۰۰ <small>تومان</small></span></div>
+      <span class="stock stock-in">موجود</span>
+    </div>
+  </div>
+</article>
+<article class="product-card">
+  <div class="media product-card-media tone-2">
+    <span class="media-fallback"><i data-lucide="book-open"></i></span>
+    <img src="https://picsum.photos/seed/atomic-habits/480/480" alt="کتاب «عادت‌های اتمی»" loading="lazy" width="480" height="480">
+    <a href="../products/product-detail.html" tabindex="-1" aria-hidden="true"></a>
+    
+    <button type="button" class="favorite-btn" data-favorite aria-pressed="false" aria-label="افزودن به علاقه‌مندی‌ها"><i data-lucide="heart"></i></button>
+  </div>
+  <div class="product-card-body">
+    <div class="product-card-meta"><span>کتاب</span></div>
+    <h3 class="product-card-title"><a href="../products/product-detail.html">کتاب «عادت‌های اتمی»</a></h3>
+    <a class="product-card-vendor" href="../products/products.html"><i data-lucide="store" class="icon-sm"></i> فروشگاه Nova Shop</a>
+    <div class="product-card-footer">
+      <div class="price"><span class="price-current">۳۲۰٬۰۰۰ <small>تومان</small></span></div>
+      <span class="stock stock-in">موجود</span>
+    </div>
+  </div>
+</article>
+<article class="product-card">
+  <div class="media product-card-media tone-2">
+    <span class="media-fallback"><i data-lucide="coffee"></i></span>
+    <img src="https://picsum.photos/seed/espresso/480/480" alt="اسپرسوساز نیمه‌اتوماتیک ۱۵ بار" loading="lazy" width="480" height="480">
+    <a href="../products/product-detail.html" tabindex="-1" aria-hidden="true"></a>
+    <span class="badge product-card-discount">۷٪</span>
+    <button type="button" class="favorite-btn" data-favorite aria-pressed="false" aria-label="افزودن به علاقه‌مندی‌ها"><i data-lucide="heart"></i></button>
+  </div>
+  <div class="product-card-body">
+    <div class="product-card-meta"><span>خانه و آشپزخانه</span></div>
+    <h3 class="product-card-title"><a href="../products/product-detail.html">اسپرسوساز نیمه‌اتوماتیک ۱۵ بار</a></h3>
+    <a class="product-card-vendor" href="../products/products.html"><i data-lucide="store" class="icon-sm"></i> فروشگاه DigiCenter</a>
+    <div class="product-card-footer">
+      <div class="price"><span class="price-old">۱۰٬۵۰۰٬۰۰۰</span><span class="price-current">۹٬۷۵۰٬۰۰۰ <small>تومان</small></span></div>
+      <span class="stock stock-in">موجود</span>
+    </div>
+  </div>
+</article>
+<article class="product-card">
+  <div class="media product-card-media tone-5">
+    <span class="media-fallback"><i data-lucide="monitor"></i></span>
+    <img src="https://picsum.photos/seed/dell-monitor/480/480" alt="مانیتور ۲۷ اینچ Dell S2722DC" loading="lazy" width="480" height="480">
+    <a href="../products/product-detail.html" tabindex="-1" aria-hidden="true"></a>
+    
+    <button type="button" class="favorite-btn" data-favorite aria-pressed="false" aria-label="افزودن به علاقه‌مندی‌ها"><i data-lucide="heart"></i></button>
+  </div>
+  <div class="product-card-body">
+    <div class="product-card-meta"><span>دیجیتال</span></div>
+    <h3 class="product-card-title"><a href="../products/product-detail.html">مانیتور ۲۷ اینچ Dell S2722DC</a></h3>
+    <a class="product-card-vendor" href="../products/products.html"><i data-lucide="store" class="icon-sm"></i> فروشگاه DigiCenter</a>
+    <div class="product-card-footer">
+      <div class="price"><span class="price-current">۱۹٬۹۰۰٬۰۰۰ <small>تومان</small></span></div>
+      <span class="stock stock-in">موجود</span>
+    </div>
+  </div>
+</article></div>
+  </section>
+
+  <section class="section" aria-labelledby="vendors-title">
+    <div class="section-header"><div><h2 id="vendors-title">فروشگاه‌های منتخب</h2><p>فروشندگانی با بیشترین رضایت خریداران</p></div></div>
+    <div class="vendor-grid"><a class="vendor-card" href="../products/products.html">
+  <div class="vendor-card-head">
+    <span class="vendor-logo tone-1" aria-hidden="true">T</span>
+    <div><h3>TechStore</h3><span class="rating"><i data-lucide="star"></i> ۴٫۸</span></div>
+  </div>
+  <p>گجت و لوازم جانبی کاربردی برای کار و تحصیل</p>
+  <div class="vendor-stats"><span>۱۲۶ محصول</span><span>تهران</span></div>
+</a><a class="vendor-card" href="../products/products.html">
+  <div class="vendor-card-head">
+    <span class="vendor-logo tone-5" aria-hidden="true">D</span>
+    <div><h3>DigiCenter</h3><span class="rating"><i data-lucide="star"></i> ۴٫۶</span></div>
+  </div>
+  <p>کالای دیجیتال، لپ‌تاپ و مانیتور با گارانتی معتبر</p>
+  <div class="vendor-stats"><span>۳۴۲ محصول</span><span>اصفهان</span></div>
+</a><a class="vendor-card" href="../products/products.html">
+  <div class="vendor-card-head">
+    <span class="vendor-logo tone-3" aria-hidden="true">N</span>
+    <div><h3>Nova Shop</h3><span class="rating"><i data-lucide="star"></i> ۴٫۷</span></div>
+  </div>
+  <p>کیف، لوازم ورزشی و ملزومات روزمره</p>
+  <div class="vendor-stats"><span>۸۹ محصول</span><span>شیراز</span></div>
+</a><a class="vendor-card" href="../products/products.html">
+  <div class="vendor-card-head">
+    <span class="vendor-logo tone-6" aria-hidden="true">P</span>
+    <div><h3>Pixel Market</h3><span class="rating"><i data-lucide="star"></i> ۴٫۵</span></div>
+  </div>
+  <p>موبایل، کنسول و تجهیزات گیمینگ</p>
+  <div class="vendor-stats"><span>۲۱۵ محصول</span><span>مشهد</span></div>
+</a></div>
+  </section>
+
+  <section class="section" aria-labelledby="how-title">
+    <div class="section-header"><h2 id="how-title">بازارچه چطور کار می‌کند؟</h2></div>
+    <div class="info-grid">
+      <div class="info-card"><span class="info-card-icon"><i data-lucide="store"></i></span><div><h3>سفارش مستقیم از فروشنده</h3><p>سبد خرید شما بر اساس فروشنده جدا می‌شود؛ برای هر فروشگاه یک سفارش و یک کد پیگیری.</p></div></div>
+      <div class="info-card"><span class="info-card-icon"><i data-lucide="layers"></i></span><div><h3>انتخاب دقیق مدل و رنگ</h3><p>موجودی و قیمت هر گزینه (رنگ، حافظه، سایز) پیش از افزودن به سبد مشخص است.</p></div></div>
+      <div class="info-card"><span class="info-card-icon"><i data-lucide="truck"></i></span><div><h3>پیگیری تا درب منزل</h3><p>وضعیت سفارش از پرداخت تا تحویل را در پنل خود ببینید و اعلان بگیرید.</p></div></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="sell-title">
+    <div class="cta-banner">
+      <div><h2 id="sell-title">فروشنده هستید؟ فروشگاه خود را همین امروز باز کنید</h2><p>محصول، گزینه‌های متنوع و موجودی را از یک پنل ساده مدیریت کنید.</p></div>
+      <a class="btn btn-primary btn-lg" href="../accounts/register.html">ثبت‌نام فروشنده</a>
+    </div>
+  </section>
+</div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="navbar-logo" href="index.html"><img src="assets/icons/logo.svg" alt="" width="34" height="34"><span>بازارچه</span></a>
+        <p>بازارچه جایی است که فروشندگان مستقل و خریداران یکدیگر را پیدا می‌کنند؛ هر سفارش مستقیم از فروشنده، با پیگیری شفاف.</p>
+      </div>
+      <div><h3>خرید</h3><ul class="footer-links"><li><a href="../products/products.html">همه محصولات</a></li><li><a href="../products/category.html">دسته‌بندی‌ها</a></li><li><a href="../cart/cart.html">سبد خرید</a></li><li><a href="../order/orders.html">پیگیری سفارش</a></li></ul></div>
+      <div><h3>فروش</h3><ul class="footer-links"><li><a href="../accounts/register.html">ثبت‌نام فروشنده</a></li><li><a href="../panel/vendor-dashboard.html">پنل فروشنده</a></li><li><a href="../products/product-form.html">افزودن محصول</a></li></ul></div>
+      <div><h3>پشتیبانی</h3><ul class="footer-links"><li><a href="../order/states.html">راهنمای خرید</a></li><li><a href="../order/states.html">قوانین و مقررات</a></li><li><a href="../order/states.html">تماس با ما</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© ۱۴۰۵ بازارچه. نمونهٔ اولیهٔ رابط کاربری.</span><span>نسخه نمایشی؛ هیچ پرداخت یا سفارش واقعی ثبت نمی‌شود.</span></div>
+  </div>
+</footer>
+<script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

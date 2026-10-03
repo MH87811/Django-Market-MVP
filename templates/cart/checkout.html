@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>پروفایل | بازارچه</title>
+  <title>تکمیل سفارش | بازارچه</title>
   <meta name="description" content="بازارچه، نمونهٔ اولیهٔ بازار آنلاین">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
     </form>
 
     <div class="navbar-actions">
-      <a class="btn-icon" href="../cart/cart.html" aria-label="سبد خرید"><i data-lucide="shopping-cart"></i><span class="icon-badge" data-cart-count>۴</span></a>
+      <a class="btn-icon" href="cart.html" aria-label="سبد خرید"><i data-lucide="shopping-cart"></i><span class="icon-badge" data-cart-count>۴</span></a>
       <div class="dropdown" data-dropdown>
         <button type="button" class="btn-icon" data-dropdown-toggle aria-expanded="false" aria-controls="notifications-menu" aria-label="اعلان‌ها"><i data-lucide="bell"></i><span class="icon-dot" data-notification-dot></span></button>
         <div class="dropdown-menu dropdown-menu--start dropdown-menu--notifications" id="notifications-menu" data-dropdown-menu hidden>
@@ -55,10 +55,10 @@
         <div class="dropdown-menu dropdown-menu--start" id="account-menu" data-dropdown-menu hidden>
           <a class="dropdown-item" href="../panel/dashboard.html"><i data-lucide="layout-dashboard"></i>داشبورد</a>
           <a class="dropdown-item" href="../order/orders.html"><i data-lucide="receipt"></i>سفارش‌های من</a>
-          <a class="dropdown-item" href="profile.html"><i data-lucide="user-round"></i>پروفایل</a>
+          <a class="dropdown-item" href="../accounts/profile.html"><i data-lucide="user-round"></i>پروفایل</a>
           <a class="dropdown-item" href="../panel/vendor-dashboard.html"><i data-lucide="store"></i>پنل فروشنده</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="login.html"><i data-lucide="log-out"></i>خروج</a>
+          <a class="dropdown-item" href="../accounts/login.html"><i data-lucide="log-out"></i>خروج</a>
         </div>
       </div>
     </div>
@@ -74,52 +74,55 @@
       <p class="mobile-menu-title">حساب کاربری</p>
       <a href="../panel/dashboard.html"><i data-lucide="layout-dashboard"></i>داشبورد</a>
       <a href="../order/orders.html"><i data-lucide="receipt"></i>سفارش‌ها</a>
-      <a href="profile.html"><i data-lucide="user-round"></i>پروفایل</a>
+      <a href="../accounts/profile.html"><i data-lucide="user-round"></i>پروفایل</a>
       <a href="../panel/vendor-dashboard.html"><i data-lucide="store"></i>پنل فروشنده</a>
-      <a href="login.html"><i data-lucide="log-in"></i>ورود / ثبت‌نام</a>
+      <a href="../accounts/login.html"><i data-lucide="log-in"></i>ورود / ثبت‌نام</a>
     </div>
   </nav>
 </header>
 <main id="main" class="page"><div class="container">
-  <div class="dashboard">
-    <aside class="sidebar sidebar-panel panel" id="dashboard-sidebar" aria-label="منوی پنل">
-  <div class="panel-header"><strong>منوی پنل</strong><button type="button" class="btn-icon btn-icon-sm" data-panel-close aria-label="بستن منو"><i data-lucide="x"></i></button></div>
-  <div class="sidebar-inner">
-    <div class="sidebar-user"><span class="avatar avatar-md" aria-hidden="true">ع</span><div><strong>علی رضایی</strong><span>حساب خریدار</span></div></div>
-    <nav class="sidebar-nav" aria-label="حساب خریدار"><a href="../panel/dashboard.html"><i data-lucide="layout-dashboard"></i>نمای کلی</a><a href="../order/orders.html"><i data-lucide="receipt"></i>سفارش‌ها</a><a href="../cart/cart.html"><i data-lucide="shopping-cart"></i>سبد خرید</a><a href="../panel/notifications.html"><i data-lucide="bell"></i>اعلان‌ها</a><a href="profile.html" aria-current="page"><i data-lucide="user-round"></i>پروفایل</a>
-      <p class="sidebar-nav-title">میان‌بر</p>
-      <a href="../panel/vendor-dashboard.html"><i data-lucide="store"></i>رفتن به پنل فروشنده</a>
-      <a href="login.html"><i data-lucide="log-out"></i>خروج از حساب</a>
-    </nav>
-  </div>
-</aside>
-    <div>
-      <div class="dashboard-topbar"><strong>پروفایل</strong><button type="button" class="btn btn-secondary btn-sm" data-panel-toggle="dashboard-sidebar" aria-controls="dashboard-sidebar" aria-expanded="false"><i data-lucide="menu"></i> منوی پنل</button></div>
-      <div class="page-header"><div><h1>پروفایل</h1><p>اطلاعات شخصی و فروشگاه خود را ویرایش کنید</p></div></div>
-<form action="profile.html" method="get" data-validate>
-  <section class="form-section" aria-labelledby="pp"><header><h2 id="pp">اطلاعات شخصی</h2></header>
-    <div class="avatar-upload" style="margin-block-end:var(--space-5)"><span class="avatar avatar-lg" aria-hidden="true">ع</span><div><label class="btn btn-secondary btn-sm" style="position:relative"><i data-lucide="upload" class="icon-sm"></i> تغییر تصویر<input type="file" accept="image/*" class="sr-only" aria-label="انتخاب تصویر پروفایل"></label><p class="form-hint" style="margin-block-start:6px">JPG یا PNG، حداکثر ۲ مگابایت</p></div></div>
-    <div class="form-grid">
-      <div class="form-group"><label class="form-label" for="fn">نام</label><input class="input" id="fn" name="first_name" value="علی" required><span class="form-error">نام را وارد کنید.</span></div>
-      <div class="form-group"><label class="form-label" for="ln">نام خانوادگی</label><input class="input" id="ln" name="last_name" value="رضایی" required><span class="form-error">نام خانوادگی را وارد کنید.</span></div>
-      <div class="form-group span-2"><label class="form-label" for="bio">دربارهٔ من <span class="optional">(اختیاری)</span></label><textarea class="textarea" id="bio" name="bio" style="min-height:96px">علاقه‌مند به تجهیزات کار و گیمینگ.</textarea></div>
-      <div class="form-group span-2"><label class="form-label" for="addr">نشانی</label><textarea class="textarea" id="addr" name="address" style="min-height:84px">تهران، خیابان ولیعصر، نرسیده به میدان ونک، کوچهٔ سوم، پلاک ۱۲، واحد ۴</textarea></div>
-      <div class="form-group"><label class="form-label" for="pz">کد پستی</label><input class="input input-ltr input-num" id="pz" name="postal_code" inputmode="numeric" value="1968713451" maxlength="10"></div>
-    </div>
-  </section>
+  <nav class="breadcrumb" aria-label="مسیر صفحه"><ol><li><a href="../core/index.html">خانه</a></li><li><a href="cart.html">سبد خرید</a></li><li><span aria-current="page">تکمیل سفارش</span></li></ol></nav>
+  <div class="page-header"><div><h1>تکمیل سفارش</h1><p>آدرس تحویل را بررسی کنید و سفارش را ثبت کنید</p></div></div>
 
-  <section class="form-section" aria-labelledby="vp"><header class="row-between" style="align-items:flex-start"><div><h2 id="vp">اطلاعات فروشگاه</h2><p>این بخش فقط برای حساب‌های فروشنده نمایش داده می‌شود.</p></div><span class="badge badge-primary">فروشنده</span></header>
-    <div class="avatar-upload" style="margin-block-end:var(--space-5)"><span class="vendor-logo tone-1" aria-hidden="true" style="width:72px;height:72px;font-size:var(--text-xl)">T</span><div><label class="btn btn-secondary btn-sm" style="position:relative"><i data-lucide="upload" class="icon-sm"></i> تغییر لوگو<input type="file" accept="image/*" class="sr-only" aria-label="انتخاب لوگوی فروشگاه"></label><p class="form-hint" style="margin-block-start:6px">تصویر مربعی با حداقل ۲۵۶ پیکسل</p></div></div>
-    <div class="form-grid">
-      <div class="form-group"><label class="form-label" for="shop">نام فروشگاه</label><input class="input input-ltr" id="shop" name="shop_name" value="TechStore" required><span class="form-error">نام فروشگاه الزامی است.</span></div>
-      <div class="form-group"><label class="form-label" for="shop-city">شهر</label><input class="input" id="shop-city" name="shop_city" value="تهران"></div>
-      <div class="form-group span-2"><label class="form-label" for="shop-info">معرفی فروشگاه</label><textarea class="textarea" id="shop-info" name="shop_info" style="min-height:96px">عرضهٔ گجت و لوازم جانبی کاربردی با ضمانت اصالت و ارسال سریع.</textarea></div>
+  <form id="checkout-form" action="../order/order-detail.html" method="get" data-validate class="checkout-grid">
+    <div>
+      <section class="checkout-section" aria-labelledby="seller-title">
+        <h2 id="seller-title"><i data-lucide="store"></i> فروشنده</h2>
+        <div class="seller-strip"><span class="vendor-logo tone-1" aria-hidden="true" style="width:40px;height:40px">T</span><span class="grow"><strong>فروشگاه TechStore</strong><br><span class="text-muted text-xs">تهران · ارسال با پست پیشتاز، ۲ تا ۴ روز کاری</span></span></div>
+      </section>
+
+      <section class="checkout-section" aria-labelledby="address-title">
+        <h2 id="address-title"><i data-lucide="map-pin"></i> آدرس تحویل</h2>
+        <div class="form-grid">
+          <div class="form-group"><label class="form-label" for="receiver">نام و نام خانوادگی گیرنده</label><input class="input" id="receiver" name="receiver" value="علی رضایی" required><span class="form-error">نام گیرنده را وارد کنید.</span></div>
+          <div class="form-group"><label class="form-label" for="phone">شمارهٔ تماس</label><input class="input input-ltr input-num" id="phone" name="phone" type="tel" inputmode="tel" value="09121234567" required pattern="09[0-9]{9}"><span class="form-error">شماره موبایل را به‌صورت ۰۹۱۲۳۴۵۶۷۸۹ وارد کنید.</span></div>
+          <div class="form-group"><label class="form-label" for="province">استان</label><select class="select" id="province" name="province"><option>تهران</option><option>اصفهان</option><option>فارس</option><option>خراسان رضوی</option><option>آذربایجان شرقی</option><option>گیلان</option></select></div>
+          <div class="form-group"><label class="form-label" for="city">شهر</label><input class="input" id="city" name="city" value="تهران" required><span class="form-error">شهر را وارد کنید.</span></div>
+          <div class="form-group span-2"><label class="form-label" for="address">نشانی کامل</label><textarea class="textarea" id="address" name="address" required style="min-height:96px">خیابان ولیعصر، نرسیده به میدان ونک، کوچهٔ سوم، پلاک ۱۲، واحد ۴</textarea><span class="form-error">نشانی را وارد کنید.</span></div>
+          <div class="form-group"><label class="form-label" for="zip">کد پستی</label><input class="input input-ltr input-num" id="zip" name="zip_code" inputmode="numeric" value="1968713451" required pattern="[0-9]{10}" maxlength="10"><span class="form-hint">۱۰ رقم، بدون خط تیره</span><span class="form-error">کد پستی باید ۱۰ رقم باشد.</span></div>
+        </div>
+      </section>
+
+      <section class="checkout-section" aria-labelledby="pay-title">
+        <h2 id="pay-title"><i data-lucide="wallet"></i> روش پرداخت</h2>
+        <label class="pay-option"><input type="radio" name="payment" value="online" checked><i data-lucide="credit-card"></i><span class="grow"><strong>پرداخت اینترنتی</strong><br><span class="text-xs text-muted">انتقال به درگاه پرداخت</span></span></label>
+        <label class="pay-option is-disabled"><input type="radio" name="payment" value="cod" disabled><i data-lucide="banknote"></i><span class="grow"><strong>پرداخت در محل</strong><br><span class="text-xs text-muted">به‌زودی</span></span></label>
+        <p class="placeholder-note"><i data-lucide="triangle-alert"></i><span>درگاه پرداخت هنوز متصل نشده است. با زدن دکمهٔ ثبت، فقط صفحهٔ نمونهٔ جزئیات سفارش نمایش داده می‌شود.</span></p>
+      </section>
     </div>
-  </section>
-  <div class="form-actions"><a class="btn btn-secondary" href="../panel/dashboard.html">انصراف</a><button type="submit" class="btn btn-primary" data-toast="پروفایل ذخیره شد">ذخیره تغییرات</button></div>
-</form>
-    </div>
-  </div>
+
+    <aside class="summary" aria-labelledby="co-summary">
+      <h2 id="co-summary">خلاصه سفارش</h2>
+      <div class="checkout-mini-item"><div class="media tone-1 "><span class="media-fallback"><i data-lucide="keyboard"></i></span><img src="https://picsum.photos/seed/keyboard-k2/120/120" alt="کیبورد مکانیکال Keychron K2" loading="lazy" width="120" height="120"></div><div class="grow"><strong>کیبورد مکانیکال Keychron K2</strong><div class="text-xs text-muted">سوئیچ قرمز، مشکی · ۱ عدد</div></div><span class="text-sm fw-600">۷٬۸۹۰٬۰۰۰</span></div><div class="checkout-mini-item"><div class="media tone-4 "><span class="media-fallback"><i data-lucide="usb"></i></span><img src="https://picsum.photos/seed/usb-hub/120/120" alt="هاب USB-C هفت‌پورت Anker" loading="lazy" width="120" height="120"></div><div class="grow"><strong>هاب USB-C هفت‌پورت Anker</strong><div class="text-xs text-muted">خاکستری · ۲ عدد</div></div><span class="text-sm fw-600">۴٬۷۸۰٬۰۰۰</span></div>
+      <div class="summary-divider"></div>
+      <div class="summary-row"><span>جمع کالاها (۳ عدد)</span><strong>۱۲٬۶۷۰٬۰۰۰ تومان</strong></div>
+      <div class="summary-row"><span>هزینه ارسال</span><strong class="text-success">رایگان</strong></div>
+      <div class="summary-divider"></div>
+      <div class="summary-total"><span>مبلغ قابل پرداخت</span><strong>۱۲٬۶۷۰٬۰۰۰ تومان</strong></div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-block-start:var(--space-5)"><i data-lucide="check"></i> تأیید و ثبت سفارش</button>
+      <a class="btn btn-ghost btn-block" href="cart.html" style="margin-block-start:var(--space-2)">بازگشت به سبد خرید</a>
+    </aside>
+  </form>
 </div></main>
 <footer class="footer">
   <div class="container">
@@ -128,8 +131,8 @@
         <a class="navbar-logo" href="../core/index.html"><img src="assets/icons/logo.svg" alt="" width="34" height="34"><span>بازارچه</span></a>
         <p>بازارچه جایی است که فروشندگان مستقل و خریداران یکدیگر را پیدا می‌کنند؛ هر سفارش مستقیم از فروشنده، با پیگیری شفاف.</p>
       </div>
-      <div><h3>خرید</h3><ul class="footer-links"><li><a href="../products/products.html">همه محصولات</a></li><li><a href="../products/category.html">دسته‌بندی‌ها</a></li><li><a href="../cart/cart.html">سبد خرید</a></li><li><a href="../order/orders.html">پیگیری سفارش</a></li></ul></div>
-      <div><h3>فروش</h3><ul class="footer-links"><li><a href="register.html">ثبت‌نام فروشنده</a></li><li><a href="../panel/vendor-dashboard.html">پنل فروشنده</a></li><li><a href="../products/product-form.html">افزودن محصول</a></li></ul></div>
+      <div><h3>خرید</h3><ul class="footer-links"><li><a href="../products/products.html">همه محصولات</a></li><li><a href="../products/category.html">دسته‌بندی‌ها</a></li><li><a href="cart.html">سبد خرید</a></li><li><a href="../order/orders.html">پیگیری سفارش</a></li></ul></div>
+      <div><h3>فروش</h3><ul class="footer-links"><li><a href="../accounts/register.html">ثبت‌نام فروشنده</a></li><li><a href="../panel/vendor-dashboard.html">پنل فروشنده</a></li><li><a href="../products/product-form.html">افزودن محصول</a></li></ul></div>
       <div><h3>پشتیبانی</h3><ul class="footer-links"><li><a href="../order/states.html">راهنمای خرید</a></li><li><a href="../order/states.html">قوانین و مقررات</a></li><li><a href="../order/states.html">تماس با ما</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>© ۱۴۰۵ بازارچه. نمونهٔ اولیهٔ رابط کاربری.</span><span>نسخه نمایشی؛ هیچ پرداخت یا سفارش واقعی ثبت نمی‌شود.</span></div>

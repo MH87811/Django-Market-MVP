@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>پروفایل | بازارچه</title>
+  <title>جزئیات سفارش | بازارچه</title>
   <meta name="description" content="بازارچه، نمونهٔ اولیهٔ بازار آنلاین">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,11 +54,11 @@
         <button type="button" class="navbar-account" data-dropdown-toggle aria-expanded="false" aria-controls="account-menu"><span class="avatar" aria-hidden="true">ع</span><span class="navbar-account-label">حساب کاربری</span><i data-lucide="chevron-down" class="icon-sm"></i></button>
         <div class="dropdown-menu dropdown-menu--start" id="account-menu" data-dropdown-menu hidden>
           <a class="dropdown-item" href="../panel/dashboard.html"><i data-lucide="layout-dashboard"></i>داشبورد</a>
-          <a class="dropdown-item" href="../order/orders.html"><i data-lucide="receipt"></i>سفارش‌های من</a>
-          <a class="dropdown-item" href="profile.html"><i data-lucide="user-round"></i>پروفایل</a>
+          <a class="dropdown-item" href="orders.html"><i data-lucide="receipt"></i>سفارش‌های من</a>
+          <a class="dropdown-item" href="../accounts/profile.html"><i data-lucide="user-round"></i>پروفایل</a>
           <a class="dropdown-item" href="../panel/vendor-dashboard.html"><i data-lucide="store"></i>پنل فروشنده</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="login.html"><i data-lucide="log-out"></i>خروج</a>
+          <a class="dropdown-item" href="../accounts/login.html"><i data-lucide="log-out"></i>خروج</a>
         </div>
       </div>
     </div>
@@ -73,10 +73,10 @@
       <a href="../products/category.html"><i data-lucide="laptop"></i>دیجیتال</a><a href="../products/category.html"><i data-lucide="shirt"></i>پوشاک</a><a href="../products/category.html"><i data-lucide="cooking-pot"></i>خانه و آشپزخانه</a><a href="../products/category.html"><i data-lucide="book-open"></i>کتاب</a><a href="../products/category.html"><i data-lucide="dumbbell"></i>ورزش</a><a href="../products/category.html"><i data-lucide="cable"></i>لوازم جانبی</a>
       <p class="mobile-menu-title">حساب کاربری</p>
       <a href="../panel/dashboard.html"><i data-lucide="layout-dashboard"></i>داشبورد</a>
-      <a href="../order/orders.html"><i data-lucide="receipt"></i>سفارش‌ها</a>
-      <a href="profile.html"><i data-lucide="user-round"></i>پروفایل</a>
+      <a href="orders.html"><i data-lucide="receipt"></i>سفارش‌ها</a>
+      <a href="../accounts/profile.html"><i data-lucide="user-round"></i>پروفایل</a>
       <a href="../panel/vendor-dashboard.html"><i data-lucide="store"></i>پنل فروشنده</a>
-      <a href="login.html"><i data-lucide="log-in"></i>ورود / ثبت‌نام</a>
+      <a href="../accounts/login.html"><i data-lucide="log-in"></i>ورود / ثبت‌نام</a>
     </div>
   </nav>
 </header>
@@ -86,38 +86,34 @@
   <div class="panel-header"><strong>منوی پنل</strong><button type="button" class="btn-icon btn-icon-sm" data-panel-close aria-label="بستن منو"><i data-lucide="x"></i></button></div>
   <div class="sidebar-inner">
     <div class="sidebar-user"><span class="avatar avatar-md" aria-hidden="true">ع</span><div><strong>علی رضایی</strong><span>حساب خریدار</span></div></div>
-    <nav class="sidebar-nav" aria-label="حساب خریدار"><a href="../panel/dashboard.html"><i data-lucide="layout-dashboard"></i>نمای کلی</a><a href="../order/orders.html"><i data-lucide="receipt"></i>سفارش‌ها</a><a href="../cart/cart.html"><i data-lucide="shopping-cart"></i>سبد خرید</a><a href="../panel/notifications.html"><i data-lucide="bell"></i>اعلان‌ها</a><a href="profile.html" aria-current="page"><i data-lucide="user-round"></i>پروفایل</a>
+    <nav class="sidebar-nav" aria-label="حساب خریدار"><a href="../panel/dashboard.html"><i data-lucide="layout-dashboard"></i>نمای کلی</a><a href="orders.html" aria-current="page"><i data-lucide="receipt"></i>سفارش‌ها</a><a href="../cart/cart.html"><i data-lucide="shopping-cart"></i>سبد خرید</a><a href="../panel/notifications.html"><i data-lucide="bell"></i>اعلان‌ها</a><a href="../accounts/profile.html"><i data-lucide="user-round"></i>پروفایل</a>
       <p class="sidebar-nav-title">میان‌بر</p>
       <a href="../panel/vendor-dashboard.html"><i data-lucide="store"></i>رفتن به پنل فروشنده</a>
-      <a href="login.html"><i data-lucide="log-out"></i>خروج از حساب</a>
+      <a href="../accounts/login.html"><i data-lucide="log-out"></i>خروج از حساب</a>
     </nav>
   </div>
 </aside>
     <div>
-      <div class="dashboard-topbar"><strong>پروفایل</strong><button type="button" class="btn btn-secondary btn-sm" data-panel-toggle="dashboard-sidebar" aria-controls="dashboard-sidebar" aria-expanded="false"><i data-lucide="menu"></i> منوی پنل</button></div>
-      <div class="page-header"><div><h1>پروفایل</h1><p>اطلاعات شخصی و فروشگاه خود را ویرایش کنید</p></div></div>
-<form action="profile.html" method="get" data-validate>
-  <section class="form-section" aria-labelledby="pp"><header><h2 id="pp">اطلاعات شخصی</h2></header>
-    <div class="avatar-upload" style="margin-block-end:var(--space-5)"><span class="avatar avatar-lg" aria-hidden="true">ع</span><div><label class="btn btn-secondary btn-sm" style="position:relative"><i data-lucide="upload" class="icon-sm"></i> تغییر تصویر<input type="file" accept="image/*" class="sr-only" aria-label="انتخاب تصویر پروفایل"></label><p class="form-hint" style="margin-block-start:6px">JPG یا PNG، حداکثر ۲ مگابایت</p></div></div>
-    <div class="form-grid">
-      <div class="form-group"><label class="form-label" for="fn">نام</label><input class="input" id="fn" name="first_name" value="علی" required><span class="form-error">نام را وارد کنید.</span></div>
-      <div class="form-group"><label class="form-label" for="ln">نام خانوادگی</label><input class="input" id="ln" name="last_name" value="رضایی" required><span class="form-error">نام خانوادگی را وارد کنید.</span></div>
-      <div class="form-group span-2"><label class="form-label" for="bio">دربارهٔ من <span class="optional">(اختیاری)</span></label><textarea class="textarea" id="bio" name="bio" style="min-height:96px">علاقه‌مند به تجهیزات کار و گیمینگ.</textarea></div>
-      <div class="form-group span-2"><label class="form-label" for="addr">نشانی</label><textarea class="textarea" id="addr" name="address" style="min-height:84px">تهران، خیابان ولیعصر، نرسیده به میدان ونک، کوچهٔ سوم، پلاک ۱۲، واحد ۴</textarea></div>
-      <div class="form-group"><label class="form-label" for="pz">کد پستی</label><input class="input input-ltr input-num" id="pz" name="postal_code" inputmode="numeric" value="1968713451" maxlength="10"></div>
-    </div>
-  </section>
+      <div class="dashboard-topbar"><strong>جزئیات سفارش</strong><button type="button" class="btn btn-secondary btn-sm" data-panel-toggle="dashboard-sidebar" aria-controls="dashboard-sidebar" aria-expanded="false"><i data-lucide="menu"></i> منوی پنل</button></div>
+      <nav class="breadcrumb" aria-label="مسیر صفحه"><ol><li><a href="orders.html">سفارش‌ها</a></li><li><span aria-current="page">سفارش #۱۰۲۴۸۷</span></li></ol></nav>
+<div class="page-header"><div class="row"><h1>سفارش #۱۰۲۴۸۷</h1><span class="badge badge-dot status-shipped" data-order-status-badge>ارسال شده</span></div><div class="page-header-actions"><a class="btn btn-secondary" href="orders.html"><i data-lucide="arrow-right"></i> بازگشت</a></div></div>
 
-  <section class="form-section" aria-labelledby="vp"><header class="row-between" style="align-items:flex-start"><div><h2 id="vp">اطلاعات فروشگاه</h2><p>این بخش فقط برای حساب‌های فروشنده نمایش داده می‌شود.</p></div><span class="badge badge-primary">فروشنده</span></header>
-    <div class="avatar-upload" style="margin-block-end:var(--space-5)"><span class="vendor-logo tone-1" aria-hidden="true" style="width:72px;height:72px;font-size:var(--text-xl)">T</span><div><label class="btn btn-secondary btn-sm" style="position:relative"><i data-lucide="upload" class="icon-sm"></i> تغییر لوگو<input type="file" accept="image/*" class="sr-only" aria-label="انتخاب لوگوی فروشگاه"></label><p class="form-hint" style="margin-block-start:6px">تصویر مربعی با حداقل ۲۵۶ پیکسل</p></div></div>
-    <div class="form-grid">
-      <div class="form-group"><label class="form-label" for="shop">نام فروشگاه</label><input class="input input-ltr" id="shop" name="shop_name" value="TechStore" required><span class="form-error">نام فروشگاه الزامی است.</span></div>
-      <div class="form-group"><label class="form-label" for="shop-city">شهر</label><input class="input" id="shop-city" name="shop_city" value="تهران"></div>
-      <div class="form-group span-2"><label class="form-label" for="shop-info">معرفی فروشگاه</label><textarea class="textarea" id="shop-info" name="shop_info" style="min-height:96px">عرضهٔ گجت و لوازم جانبی کاربردی با ضمانت اصالت و ارسال سریع.</textarea></div>
-    </div>
+<section class="card" aria-labelledby="tl-title"><div class="card-header"><h2 id="tl-title">وضعیت سفارش</h2></div><div class="card-body"><ol class="order-timeline" data-order-timeline><li class="order-step is-done"><span class="order-step-icon"><i data-lucide="clock"></i></span><div class="order-step-text"><h3>در انتظار پرداخت</h3><p>۱۴۰۵/۰۷/۰۹ · ۱۰:۱۵</p></div></li><li class="order-step is-done"><span class="order-step-icon"><i data-lucide="wallet"></i></span><div class="order-step-text"><h3>پرداخت شده</h3><p>۱۴۰۵/۰۷/۰۹ · ۱۰:۲۲</p></div></li><li class="order-step is-current"><span class="order-step-icon"><i data-lucide="truck"></i></span><div class="order-step-text"><h3>ارسال شده</h3><p>۱۴۰۵/۰۷/۱۰ · ۱۴:۰۰</p></div></li><li class="order-step is-upcoming"><span class="order-step-icon"><i data-lucide="package-check"></i></span><div class="order-step-text"><h3>تحویل داده شده</h3><p>پیش‌بینی: ۱۴۰۵/۰۷/۱۳</p></div></li></ol></div></section>
+
+<div class="dashboard-grid" style="margin-block-start:var(--space-4)">
+  <section class="card" style="margin:0" aria-labelledby="items-title"><div class="card-header"><h2 id="items-title">کالاهای سفارش</h2><span class="text-sm text-muted">۳ کالا</span></div><div class="line-item"><div class="media tone-1 "><span class="media-fallback"><i data-lucide="keyboard"></i></span><img src="https://picsum.photos/seed/keyboard-k2/120/120" alt="کیبورد مکانیکال Keychron K2" loading="lazy" width="120" height="120"></div><div><a href="../products/product-detail.html"><strong>کیبورد مکانیکال Keychron K2</strong></a><div class="cart-item-variants"><span class="badge">سوئیچ قرمز · مشکی</span></div><p class="cart-item-unit">۷٬۸۹۰٬۰۰۰ تومان × ۱</p></div><span class="price-current">۷٬۸۹۰٬۰۰۰ <small>تومان</small></span></div><div class="line-item"><div class="media tone-4 "><span class="media-fallback"><i data-lucide="usb"></i></span><img src="https://picsum.photos/seed/usb-hub/120/120" alt="هاب USB-C هفت‌پورت Anker" loading="lazy" width="120" height="120"></div><div><a href="../products/product-detail.html"><strong>هاب USB-C هفت‌پورت Anker</strong></a><div class="cart-item-variants"><span class="badge">خاکستری</span></div><p class="cart-item-unit">۲٬۳۹۰٬۰۰۰ تومان × ۲</p></div><span class="price-current">۴٬۷۸۰٬۰۰۰ <small>تومان</small></span></div>
+    <div class="card-footer"><div class="summary-row"><span>جمع کالاها</span><strong>۱۲٬۶۷۰٬۰۰۰ تومان</strong></div><div class="summary-row"><span>هزینه ارسال</span><strong class="text-success">رایگان</strong></div><div class="summary-divider"></div><div class="summary-total"><span>مبلغ کل</span><strong>۱۲٬۶۷۰٬۰۰۰ تومان</strong></div></div>
   </section>
-  <div class="form-actions"><a class="btn btn-secondary" href="../panel/dashboard.html">انصراف</a><button type="submit" class="btn btn-primary" data-toast="پروفایل ذخیره شد">ذخیره تغییرات</button></div>
-</form>
+  <div class="dashboard-stack">
+    <section class="card" style="margin:0"><div class="card-header"><h2>فروشنده</h2></div><div class="card-body"><div class="row"><span class="vendor-logo tone-1" aria-hidden="true" style="width:44px;height:44px">T</span><div><strong>فروشگاه TechStore</strong><div class="text-xs text-muted">تهران</div></div></div></div></section>
+    <section class="card" style="margin:0"><div class="card-header"><h2>اطلاعات ارسال</h2></div><div class="card-body"><dl class="info-list">
+      <div><dt>گیرنده</dt><dd>علی رضایی</dd></div>
+      <div><dt>نشانی</dt><dd>تهران، خیابان ولیعصر، نرسیده به میدان ونک، کوچهٔ سوم، پلاک ۱۲، واحد ۴</dd></div>
+      <div><dt>کد پستی</dt><dd class="num">۱۹۶۸۷۱۳۴۵۱</dd></div>
+      <div><dt>کد پیگیری مرسوله</dt><dd data-tracking style="direction:ltr;text-align:right">۲۴۵۱۸۸۷۳۹۰۱۲۳۴۵۶۷۸۹۰</dd></div>
+    </dl></div></section>
+  </div>
+</div>
     </div>
   </div>
 </div></main>
@@ -128,9 +124,9 @@
         <a class="navbar-logo" href="../core/index.html"><img src="assets/icons/logo.svg" alt="" width="34" height="34"><span>بازارچه</span></a>
         <p>بازارچه جایی است که فروشندگان مستقل و خریداران یکدیگر را پیدا می‌کنند؛ هر سفارش مستقیم از فروشنده، با پیگیری شفاف.</p>
       </div>
-      <div><h3>خرید</h3><ul class="footer-links"><li><a href="../products/products.html">همه محصولات</a></li><li><a href="../products/category.html">دسته‌بندی‌ها</a></li><li><a href="../cart/cart.html">سبد خرید</a></li><li><a href="../order/orders.html">پیگیری سفارش</a></li></ul></div>
-      <div><h3>فروش</h3><ul class="footer-links"><li><a href="register.html">ثبت‌نام فروشنده</a></li><li><a href="../panel/vendor-dashboard.html">پنل فروشنده</a></li><li><a href="../products/product-form.html">افزودن محصول</a></li></ul></div>
-      <div><h3>پشتیبانی</h3><ul class="footer-links"><li><a href="../order/states.html">راهنمای خرید</a></li><li><a href="../order/states.html">قوانین و مقررات</a></li><li><a href="../order/states.html">تماس با ما</a></li></ul></div>
+      <div><h3>خرید</h3><ul class="footer-links"><li><a href="../products/products.html">همه محصولات</a></li><li><a href="../products/category.html">دسته‌بندی‌ها</a></li><li><a href="../cart/cart.html">سبد خرید</a></li><li><a href="orders.html">پیگیری سفارش</a></li></ul></div>
+      <div><h3>فروش</h3><ul class="footer-links"><li><a href="../accounts/register.html">ثبت‌نام فروشنده</a></li><li><a href="../panel/vendor-dashboard.html">پنل فروشنده</a></li><li><a href="../products/product-form.html">افزودن محصول</a></li></ul></div>
+      <div><h3>پشتیبانی</h3><ul class="footer-links"><li><a href="states.html">راهنمای خرید</a></li><li><a href="states.html">قوانین و مقررات</a></li><li><a href="states.html">تماس با ما</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>© ۱۴۰۵ بازارچه. نمونهٔ اولیهٔ رابط کاربری.</span><span>نسخه نمایشی؛ هیچ پرداخت یا سفارش واقعی ثبت نمی‌شود.</span></div>
   </div>
