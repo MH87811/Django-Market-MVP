@@ -12,4 +12,5 @@ urlpatterns = [
     path('<slug:slug>/variant/add', AddVariantView.as_view(), name='add_variant'),
     path('<slug:slug>/variant/<int:id>/update', VariantUpdateView.as_view(), name='update_variant'),
     path('<slug:slug>/variant/<int:id>/delete', VariantDeleteView.as_view(), name='delete_variant'),
+    path('category/<slug:slug>', CategoryItemListView.as_view(), name='category_items')
 ]

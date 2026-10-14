@@ -53,7 +53,7 @@ class Product(models.Model):
         main_image = self.images.get(is_main=True)
         if main_image:
             return main_image.image.url
-        return None
+        return self.images.first().image.url
 
     def get_all_images(self):
         return [image.image.url for image in self.images.all()]
@@ -63,8 +63,7 @@ class Product(models.Model):
         total_stock = sum(variant.stock for variant in self.variants.all())
         if total_stock > 0:
             return total_stock
-        else:
-            return 'unavailable'
+        return 0
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

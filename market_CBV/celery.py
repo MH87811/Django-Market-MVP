@@ -1,4 +1,4 @@
-from market_CBV.celery import Celery
+from celery import Celery
 import os
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'market_CBV.settings')

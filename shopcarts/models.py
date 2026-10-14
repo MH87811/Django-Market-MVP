@@ -8,7 +8,7 @@ User = get_user_model()
 
 class Cart(models.Model):
     user = models.ForeignKey(User, on_delete=models.PROTECT, related_name='carts')
-    seller = models.ForeignKey(User, on_delete=models.PROTECT, related_name='sell_orders')
+    seller = models.ForeignKey(User, on_delete=models.PROTECT, related_name='sell_carts')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

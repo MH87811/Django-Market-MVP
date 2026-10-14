@@ -8,7 +8,7 @@ User = get_user_model()
 
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.PROTECT, related_name='orders')
-    seller = models.ForeignKey(User, on_delete=models.PROTECT, related_name='sell_carts')
+    seller = models.ForeignKey(User, on_delete=models.PROTECT, related_name='sell_orders')
     total_price = models.PositiveIntegerField()
     tracking_code = models.CharField(max_length=24, unique=True, blank=True, null=True)
     address = models.TextField()

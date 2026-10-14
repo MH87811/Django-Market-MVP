@@ -1,0 +1,91 @@
+{% load static %}
+<a class="skip-link" href="#main">پرش به محتوای اصلی</a>
+<header class="navbar" id="site-header">
+  <div class="container navbar-inner">
+    <button type="button" class="btn-icon navbar-toggle" data-panel-toggle="mobile-menu" aria-controls="mobile-menu" aria-expanded="false" aria-label="باز کردن منو"><i data-lucide="menu"></i></button>
+    <a class="navbar-logo" href="{% url 'core:index' %}" aria-label="بازارچه، صفحه اصلی"><img src="{% static 'assets/icons/logo.svg' %}" alt="" width="34" height="34"><span>بازارچه</span></a>
+
+    <div class="dropdown navbar-categories" data-dropdown>
+      <button type="button" class="btn btn-ghost" data-dropdown-toggle aria-expanded="false" aria-controls="categories-menu"><i data-lucide="layout-grid"></i> دسته‌بندی‌ها <i data-lucide="chevron-down" class="icon-sm"></i></button>
+      <div class="dropdown-menu dropdown-menu--start dropdown-menu--categories" id="categories-menu" data-dropdown-menu hidden>
+          {% for category in categories %}
+            <a class="dropdown-item" href="{% url 'products:category_items' category.slug %}"><i data-lucide="laptop"></i>{{ category.title }}</a>
+          {% endfor %}
+      </div>
+    </div>
+
+    <form class="search-bar navbar-search" role="search" action="../products/products.html" method="get">
+      <label class="sr-only" for="nav-search">جستجوی محصولات</label>
+      <span class="search-bar-icon"><i data-lucide="search"></i></span>
+      <input class="input" id="nav-search" type="search" name="q" placeholder="جستجوی محصولات، دسته‌بندی‌ها و فروشندگان…" autocomplete="off">
+    </form>
+
+    <div class="navbar-actions">
+      <a class="btn-icon" href="{% url 'shopcarts:detail' %}" aria-label="سبد خرید">
+          <i data-lucide="shopping-cart"></i>
+          <span class="icon-badge" data-cart-count>{{ request.user.cart.items.count }}</span>
+      </a>
+      <div class="dropdown" data-dropdown>
+        <button type="button" class="btn-icon" data-dropdown-toggle aria-expanded="false" aria-controls="notifications-menu" aria-label="اعلان‌ها">
+            <i data-lucide="bell"></i>
+            <span class="icon-dot" data-notification-dot></span>
+        </button>
+        <div class="dropdown-menu dropdown-menu--start dropdown-menu--notifications" id="notifications-menu" data-dropdown-menu hidden>
+          <div class="dropdown-head">
+              <h2>اعلان‌ها</h2>
+              <button type="button" class="link-button" data-mark-all-read>علامت‌گذاری همه به‌عنوان خوانده‌شده</button>
+          </div>
+          <div class="notification-list">
+            <a class="notification-item notification-item--success is-unread" href="../panel/notifications.html">
+              <span class="notification-icon"><i data-lucide="package-check"></i></span>
+              <span class="notification-body"><strong>سفارش شما ارسال شد</strong><time>۲ ساعت پیش</time></span>
+            </a>
+            <a class="notification-item notification-item--info is-unread" href="../panel/notifications.html">
+              <span class="notification-icon"><i data-lucide="shopping-bag"></i></span>
+              <span class="notification-body"><strong>سفارش جدید ثبت شد</strong><time>۵ ساعت پیش</time></span>
+            </a>
+            <a class="notification-item notification-item--warning is-unread" href="../panel/notifications.html">
+              <span class="notification-icon"><i data-lucide="triangle-alert"></i></span>
+              <span class="notification-body"><strong>موجودی رو به اتمام است</strong><time>دیروز</time></span>
+            </a>
+          </div>
+          <a class="dropdown-foot" href="../panel/notifications.html">مشاهده همه اعلان‌ها</a>
+        </div>
+      </div>
+      <div class="dropdown navbar-account-desktop" data-dropdown>
+        <button type="button" class="navbar-account" data-dropdown-toggle aria-expanded="false" aria-controls="account-menu"><span class="avatar" aria-hidden="true">ع</span><span class="navbar-account-label">حساب کاربری</span><i data-lucide="chevron-down" class="icon-sm"></i></button>
+        <div class="dropdown-menu dropdown-menu--start" id="account-menu" data-dropdown-menu hidden>
+          <a class="dropdown-item" href="{% url 'panels:buyer-dash' %}"><i data-lucide="layout-dashboard"></i>داشبورد</a>
+          <a class="dropdown-item" href="../order/orders.html"><i data-lucide="receipt"></i>سفارش‌های من</a>
+          <a class="dropdown-item" href="../accounts/profile.html"><i data-lucide="user-round"></i>پروفایل</a>
+          <a class="dropdown-item" href="../panel/vendor-dashboard.html"><i data-lucide="store"></i>پنل فروشنده</a>
+          <div class="dropdown-divider"></div>
+          <form action="{% url 'accounts:logout' %}" method="post">
+            {% csrf_token %}
+            <button style="background: none; border: none; width: 100%">
+              <a class="dropdown-item">
+                <i data-lucide="log-out"></i>خروج
+              </a>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="mobile-menu panel" id="mobile-menu" aria-label="منوی اصلی">
+    <div class="panel-header"><a class="navbar-logo" href="index.html"><img src="{% static 'assets/icons/logo.svg' %}" alt="" width="30" height="30"><span>بازارچه</span></a><button type="button" class="btn-icon btn-icon-sm" data-panel-close aria-label="بستن منو"><i data-lucide="x"></i></button></div>
+    <div class="mobile-menu-body mobile-menu-links">
+      <a href="index.html"><i data-lucide="house"></i>صفحه اصلی</a>
+      <a href="../products/products.html"><i data-lucide="package"></i>همه محصولات</a>
+      <p class="mobile-menu-title">دسته‌بندی‌ها</p>
+      <a href="../products/category.html"><i data-lucide="laptop"></i>دیجیتال</a><a href="../products/category.html"><i data-lucide="shirt"></i>پوشاک</a><a href="../products/category.html"><i data-lucide="cooking-pot"></i>خانه و آشپزخانه</a><a href="../products/category.html"><i data-lucide="book-open"></i>کتاب</a><a href="../products/category.html"><i data-lucide="dumbbell"></i>ورزش</a><a href="../products/category.html"><i data-lucide="cable"></i>لوازم جانبی</a>
+      <p class="mobile-menu-title">حساب کاربری</p>
+      <a href="../panel/dashboard.html"><i data-lucide="layout-dashboard"></i>داشبورد</a>
+      <a href="../order/orders.html"><i data-lucide="receipt"></i>سفارش‌ها</a>
+      <a href="../accounts/profile.html"><i data-lucide="user-round"></i>پروفایل</a>
+      <a href="../panel/vendor-dashboard.html"><i data-lucide="store"></i>پنل فروشنده</a>
+      <a href="../accounts/login.html"><i data-lucide="log-in"></i>ورود / ثبت‌نام</a>
+    </div>
+  </nav>
+</header>

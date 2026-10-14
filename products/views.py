@@ -1,3 +1,6 @@
+from collections import defaultdict
+
+from django.db.models import Count
 from django.shortcuts import  get_object_or_404, redirect
 from django.contrib import messages
 from django.db import transaction
@@ -18,11 +21,20 @@ class ProductListView(ListView):
 
 class ProductDetailView(DetailView):
     model = Product
-    template_name = 'products/detail.html'
+    template_name = 'products/product-detail.html'
+    context_object_name = 'product'
+
+    def get_queryset(self):
+        return Product.objects.prefetch_related('variants')
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         ctx['is_owner'] = self.object.user == self.request.user
+
+        variant_groups = defaultdict(list)
+        for variant in ctx['product'].variants.all():
+            variant_groups[variant.name].append(variant)
+        ctx['variant_groups'] = dict(variant_groups)
         return ctx
 
 
@@ -153,3 +165,15 @@ class VariantDeleteView(BaseVendorView, DeleteView):
             product=self.product,
             pk=self.kwargs.get('id'),
         )
+
+class CategoryItemListView(ListView):
+    model = Product
+    template_name = 'products/category.html'
+
+    def get_queryset(self):
+        return Product.objects.filter(category__slug=self.kwargs.get('slug'))
+
+    def get_context_data(self, *, object_list = ..., **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        ctx['category'] = Category.objects.annotate(seller_count=Count('category_products__user', distinct=True)).get(slug=self.kwargs.get('slug'))
+        return ctx

@@ -1,0 +1,17 @@
+<section class="section" style="margin-block-start:var(--space-5)" aria-labelledby="cats-title">
+  <div class="section-header">
+    <h2 id="cats-title">دسته‌بندی‌ها</h2>
+    <a class="section-link" href="../products/category.html">همه دسته‌بندی‌ها <i data-lucide="arrow-left" class="icon-sm"></i></a>
+  </div>
+  <div class="category-grid">
+      {% for category in categories %}
+        <a class="category-card" href="{% url 'products:category_items' category.slug %}">
+            <div class="media category-card-media tone-1">
+                <span class="media-fallback"><i data-lucide="laptop"></i></span>
+            </div>
+            <h3>{{ category.title }}</h3>
+            <span>{{ category.category_products.count }} محصول</span>
+        </a>
+      {% endfor %}
+  </div>
+</section>
